@@ -7,8 +7,6 @@ use Goutte\Client;
 $client = new Client();
 $client->setServerParameter('HTTP_USER_AGENT', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0');
 
-$crawler = $client->request('GET', 'https://ap.ece.moe.edu.tw/webecems/pubSearch.aspx');
-
 $lastPage = 1;
 $csvPath = $baseDir . '/docs/data/csv';
 if (!file_exists($csvPath)) {
