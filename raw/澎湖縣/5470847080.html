@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/>
+<meta name="keywords" content="垃圾車,清運路線,路線查詢,行政院環保署,環保署" />
+<meta name="description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:title" content="全國垃圾車清運路線查詢網,行政院環保署全國垃圾車清運路線查詢網" />
+<meta property="og:description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:site_name" content="全國垃圾車清運路線查詢網" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>路線資訊│全國垃圾車清運路線查詢網</title>
+<!--CSS-->
+<link rel="stylesheet" href="/dispPageBox/route/assets/fontAwesome/css/fontAwesome.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/magnific/magnificPopup.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/reset.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/style.css" />
+<link rel="shortcut icon" href="/dispPageBox/route/favicon.ico" />
+
+
+<!--[if lt ie 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<form name="mForm" method="post" action="./routeCP.aspx?ddsPageID=LINEINFO&amp;dbid=5470847080" id="mForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1E52EDA3" />
+</div>
+    <a class="skip-main" href="#anchorC" title="跳到主要內容">跳到主要內容</a>
+<div class="wrapper">
+
+    <div class="header">
+        <nav class="navbar navbar-default">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand" href="/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE&" title="全國垃圾車清運路線查詢網">全國垃圾車清運路線查詢網</h1>
+            </div>
+           
+            <div id="navbar" class="navbar-collapse collapse main-navbar">
+
+                <div class="container">
+
+                    <!-- 主導覽列 -->
+                    
+<!-- Main Nav Start -->
+
+<!-- start menu -->
+<ul class="nav nav-pills nav-justified"><!-- 若是在執行中的樣式，要在menu前方再加上 active  -->
+   
+		<li><a href='routeCP.aspx?ddsPageID=ROUTENEWS&' class='tab' title='公告訊息'><em>公告訊息</em></a></li>
+	 
+		<li><a href='routeCP.aspx?ddsPageID=ROUTELINK&' class='tab' title='相關連結'><em>相關連結</em></a></li>
+	 
+
+</ul>
+<!-- end menu -->
+
+
+
+                    <!-- <ul class="nav nav-pills nav-justified">
+                        <li><a href="path.html">清運路線查詢</a></li>
+                        <li><a href="news.html">公告訊息</a></li>
+                        <li class="active"><a href="link.html">相關連結</a></li>
+                    </ul> -->
+
+                </div><!--/.container-->
+
+            </div><!--/.nav-collapse -->
+
+        </nav>
+
+    </div><!-- header END -->
+
+    <h1 class="site-title">全國垃圾車清運路線查詢網</h1>
+
+    <div class="jumbotron">
+
+        <h2 class="main-title">路線資訊</h2>
+
+        <!-- 麵包屑 -->
+        
+
+    </div><!-- jumbotron END -->
+
+    
+    <div class="main-content">
+
+        <div class="container">
+
+            <div class="content">
+<a accesskey="C" name="C" id="anchorC" href="#C" title="快速鍵alt+C 回主要內容區" class="accesskey-link" style="top:7px; left: 0; z-index: 999;">:::</a>
+                <!-- 主內容開始 -->
+                
+<!--每頁列數，不分頁則設0-->
+
+
+<!-- /dispPageBox/trans.aspx?ddsPageID=ROUTE -->
+<a class="btn-back" href="/dispPageBox/trans.aspx?ddsPageID=ROUTE"><span class="fa fa-angle-left"></span>返回列表</a>
+<!-- <a class="btn-back" href="javascript: history.go(-1)"><span class="fa fa-angle-left"></span>返回列表</a> -->
+<!-- <h3 class="info-title">-->
+中區 
+<!--</h3>-->
+
+<div class="row">
+
+    <div class="sidebar col-sm-3">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">中區 資訊</h3>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt>縣市別</dt>
+                    <dd>澎湖縣</dd>
+                    <dt>鄉鎮市區</dt>
+                    <dd>西嶼鄉                   </dd>
+                    <dt>清運路線序號</dt>
+                    <dd>X88120002</dd>
+                    <dt>清運路線名稱</dt>
+                    <dd>中區</dd>
+                    <dt>清運方式</dt>
+                    <dd>沿線清運(不落地)</dd>
+                    <dt>清運車輛車號</dt>
+                    <dd>KEC9969(備用車號:643VL) </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">中區 數據</h3>
+            </div>
+            <div class="panel-body">
+                <div class="dataResult">
+                    <div class="result-item">
+                        <span class="num">30.00</span>
+                        <span class="result-title">清運路線距離(公里)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1.00</span>
+                        <span class="result-title">每日清運垃圾量(公噸/日)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">6</span>
+                        <span class="result-title">清運頻率(週)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1</span>
+                        <span class="result-title">清運頻率(日)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-sm-3 END -->
+
+    <div class="resultArea col-sm-9">
+
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active">
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5470847080'><span class="fa fa-list-ul"></span>路線資訊</a>
+            </li>
+            <li>
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEPIC&dbid=5470847080'><span class="fa fa-bus"></span>路線圖</a>
+            </li>
+        </ul>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            
+                <thead>
+                    <tr>
+                        <th>清運序</th>
+                        <th>清運點名稱描述</th>
+                        <th>清運時間</th>
+                        <th>一般垃圾</th>
+                        <th>廚餘回收</th>
+                        <th>資源回收</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>1</td>
+                        <td>小門村廟前</td>
+                        <td>17:00</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>2</td>
+                        <td>小門村活動中心</td>
+                        <td>17:03</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>3</td>
+                        <td>小門村許茲融厝邊</td>
+                        <td>17:08</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>4</td>
+                        <td>二崁村鳥來伯厝邊</td>
+                        <td>17:17</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>5</td>
+                        <td>二崁村陳麗美厝邊</td>
+                        <td>17:20</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>6</td>
+                        <td>內垵村南港</td>
+                        <td>17:30</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>7</td>
+                        <td>內垵村郭清心厝邊</td>
+                        <td>17:33</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>8</td>
+                        <td>內垵村加水站旁邊</td>
+                        <td>17:36</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>9</td>
+                        <td>內垵村才天得厝邊</td>
+                        <td>17:39</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>10</td>
+                        <td>內垵村公廟</td>
+                        <td>17:42</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>11</td>
+                        <td>內垵村薛素娥宅前</td>
+                        <td>17:47</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>12</td>
+                        <td>內垵村慈音寺</td>
+                        <td>17:50</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>13</td>
+                        <td>內垵村洪中文厝北路口</td>
+                        <td>17:53</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>14</td>
+                        <td>內垵村陳源厝北路口</td>
+                        <td>17:56</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>15</td>
+                        <td>內垵村北港</td>
+                        <td>18:00</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>16</td>
+                        <td>內垵村呂清陣厝南</td>
+                        <td>18:03</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>17</td>
+                        <td>內垵村原山五金行</td>
+                        <td>18:06</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>18</td>
+                        <td>內垵村黑士黑厝邊</td>
+                        <td>18:09</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>19</td>
+                        <td>內垵村陳長庚厝邊</td>
+                        <td>18:12</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>20</td>
+                        <td>池東村五金店</td>
+                        <td>18:18</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>21</td>
+                        <td>池東村介仁厝邊</td>
+                        <td>18:21</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>22</td>
+                        <td>池東村清心餐廳旁</td>
+                        <td>18:23</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>23</td>
+                        <td>池東村吳東明厝前</td>
+                        <td>18:26</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>24</td>
+                        <td>池東村漁會</td>
+                        <td>18:29</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>25</td>
+                        <td>池東村黃光隊厝口</td>
+                        <td>18:31</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>26</td>
+                        <td>池東村盧應樂厝邊</td>
+                        <td>18:34</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>27</td>
+                        <td>池東村原台電服務處</td>
+                        <td>18:39</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>28</td>
+                        <td>池東村黃福展厝東路口</td>
+                        <td>18:41</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>29</td>
+                        <td>池東村張良德厝東路口</td>
+                        <td>18:43</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>30</td>
+                        <td>池東村土地公廟</td>
+                        <td>18:45</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>一、二、三、四、五、六</td>
+                        <td>二、五</td>
+                    </tr>
+                
+                </tbody>
+                
+            </table>
+        </div><!-- table-responsive END -->
+
+
+        <div class="pagi text-center">
+          <ul class="pagination">
+              
+          </ul>
+        </div>
+
+
+
+
+    </div><!-- col-md-9 END -->
+
+</div><!-- row END -->
+
+
+
+
+
+
+
+            </div><!-- content END -->
+
+        </div><!-- container END -->
+    </div><!-- main-content END -->
+
+    <div class="footCooy">
+        <div class="container">
+            <p>
+                <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20191118152436" target="_blank" title="無障礙網站(另開新視窗)">
+                    <img src="images/Accessibility.jpg" border="0" width="88" height="31" alt="通過A無障礙網頁檢測" />
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/41156C14CC997554" target="_blank" title="隱私權保護政策" style="color:white;">
+                    隱私權保護政策
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/93E745565929795D" target="_blank" title="網站安全政策" style="color:white;">
+                    網站安全政策
+                </a>│
+                <a href="https://www.epa.gov.tw/public/Data/59710575671.pdf" target="_blank" title="資訊安全規範" style="color:white;">
+                    資訊安全規範
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/A33D3A6556ABFCD2" target="_blank" title="網站資料開放宣告" style="color:white;">
+                    網站資料開放宣告
+                </a>
+                <br />
+                行政院環保署 版權所有 © 2017 All Rights Reserved
+            </p>
+        </div>
+    </div>
+
+
+</div><!--wrapper -->
+
+
+
+<a href="#" class="scrollToTop" title="回頁首">Scroll To Top</a>
+
+</form>
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/dispPageBox/route/js/jquery-ui.min.js"></script>
+<script src="/dispPageBox/route/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.min.js"></script>
+<script src="/dispPageBox/route/assets/magnific/magnificPopup.min.js"></script>
+<script src="/dispPageBox/route/js/script.js"></script>
+</body>
+</html>

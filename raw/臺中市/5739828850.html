@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/>
+<meta name="keywords" content="垃圾車,清運路線,路線查詢,行政院環保署,環保署" />
+<meta name="description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:title" content="全國垃圾車清運路線查詢網,行政院環保署全國垃圾車清運路線查詢網" />
+<meta property="og:description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:site_name" content="全國垃圾車清運路線查詢網" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>路線資訊│全國垃圾車清運路線查詢網</title>
+<!--CSS-->
+<link rel="stylesheet" href="/dispPageBox/route/assets/fontAwesome/css/fontAwesome.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/magnific/magnificPopup.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/reset.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/style.css" />
+<link rel="shortcut icon" href="/dispPageBox/route/favicon.ico" />
+
+
+<!--[if lt ie 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<form name="mForm" method="post" action="./routeCP.aspx?ddsPageID=LINEINFO&amp;dbid=5739828850" id="mForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1E52EDA3" />
+</div>
+    <a class="skip-main" href="#anchorC" title="跳到主要內容">跳到主要內容</a>
+<div class="wrapper">
+
+    <div class="header">
+        <nav class="navbar navbar-default">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand" href="/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE&" title="全國垃圾車清運路線查詢網">全國垃圾車清運路線查詢網</h1>
+            </div>
+           
+            <div id="navbar" class="navbar-collapse collapse main-navbar">
+
+                <div class="container">
+
+                    <!-- 主導覽列 -->
+                    
+<!-- Main Nav Start -->
+
+<!-- start menu -->
+<ul class="nav nav-pills nav-justified"><!-- 若是在執行中的樣式，要在menu前方再加上 active  -->
+   
+		<li><a href='routeCP.aspx?ddsPageID=ROUTENEWS&' class='tab' title='公告訊息'><em>公告訊息</em></a></li>
+	 
+		<li><a href='routeCP.aspx?ddsPageID=ROUTELINK&' class='tab' title='相關連結'><em>相關連結</em></a></li>
+	 
+
+</ul>
+<!-- end menu -->
+
+
+
+                    <!-- <ul class="nav nav-pills nav-justified">
+                        <li><a href="path.html">清運路線查詢</a></li>
+                        <li><a href="news.html">公告訊息</a></li>
+                        <li class="active"><a href="link.html">相關連結</a></li>
+                    </ul> -->
+
+                </div><!--/.container-->
+
+            </div><!--/.nav-collapse -->
+
+        </nav>
+
+    </div><!-- header END -->
+
+    <h1 class="site-title">全國垃圾車清運路線查詢網</h1>
+
+    <div class="jumbotron">
+
+        <h2 class="main-title">路線資訊</h2>
+
+        <!-- 麵包屑 -->
+        
+
+    </div><!-- jumbotron END -->
+
+    
+    <div class="main-content">
+
+        <div class="container">
+
+            <div class="content">
+<a accesskey="C" name="C" id="anchorC" href="#C" title="快速鍵alt+C 回主要內容區" class="accesskey-link" style="top:7px; left: 0; z-index: 999;">:::</a>
+                <!-- 主內容開始 -->
+                
+<!--每頁列數，不分頁則設0-->
+
+
+<!-- /dispPageBox/trans.aspx?ddsPageID=ROUTE -->
+<a class="btn-back" href="/dispPageBox/trans.aspx?ddsPageID=ROUTE"><span class="fa fa-angle-left"></span>返回列表</a>
+<!-- <a class="btn-back" href="javascript: history.go(-1)"><span class="fa fa-angle-left"></span>返回列表</a> -->
+<!-- <h3 class="info-title">-->
+310 
+<!--</h3>-->
+
+<div class="row">
+
+    <div class="sidebar col-sm-3">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">310 資訊</h3>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt>縣市別</dt>
+                    <dd>臺中市</dd>
+                    <dt>鄉鎮市區</dt>
+                    <dd>東區</dd>
+                    <dt>清運路線序號</dt>
+                    <dd>B40110012</dd>
+                    <dt>清運路線名稱</dt>
+                    <dd>310</dd>
+                    <dt>清運方式</dt>
+                    <dd>定點清運</dd>
+                    <dt>清運車輛車號</dt>
+                    <dd>KEL0260(備用車號:) </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">310 數據</h3>
+            </div>
+            <div class="panel-body">
+                <div class="dataResult">
+                    <div class="result-item">
+                        <span class="num">17.00</span>
+                        <span class="result-title">清運路線距離(公里)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">3.52</span>
+                        <span class="result-title">每日清運垃圾量(公噸/日)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">5</span>
+                        <span class="result-title">清運頻率(週)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1</span>
+                        <span class="result-title">清運頻率(日)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-sm-3 END -->
+
+    <div class="resultArea col-sm-9">
+
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active">
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5739828850'><span class="fa fa-list-ul"></span>路線資訊</a>
+            </li>
+            <li>
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEPIC&dbid=5739828850'><span class="fa fa-bus"></span>路線圖</a>
+            </li>
+        </ul>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            
+                <thead>
+                    <tr>
+                        <th>清運序</th>
+                        <th>清運點名稱描述</th>
+                        <th>清運時間</th>
+                        <th>一般垃圾</th>
+                        <th>廚餘回收</th>
+                        <th>資源回收</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>1</td>
+                        <td>臺中市東區進化路110號</td>
+                        <td>14:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>2</td>
+                        <td>臺中市東區進化路66號</td>
+                        <td>14:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>3</td>
+                        <td>臺中市東區進化路96號</td>
+                        <td>14:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>4</td>
+                        <td>臺中市東區進化路134號</td>
+                        <td>14:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>5</td>
+                        <td>臺中市東區進化路146號</td>
+                        <td>14:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>6</td>
+                        <td>臺中市東區進化路162號</td>
+                        <td>14:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>7</td>
+                        <td>臺中市東區進化路176號</td>
+                        <td>14:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>8</td>
+                        <td>臺中市東區進化路200號</td>
+                        <td>14:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>9</td>
+                        <td>臺中市東區精武路59之1號</td>
+                        <td>15:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>10</td>
+                        <td>臺中市東區精武路63之2號</td>
+                        <td>15:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>11</td>
+                        <td>臺中市東區精武路67號</td>
+                        <td>15:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>12</td>
+                        <td>臺中市東區力行路176號</td>
+                        <td>15:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>13</td>
+                        <td>臺中市東區進化路218號</td>
+                        <td>15:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>14</td>
+                        <td>臺中市東區進化路260號</td>
+                        <td>15:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>15</td>
+                        <td>臺中市東區進化路268號</td>
+                        <td>15:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>16</td>
+                        <td>臺中市東區力行路212號</td>
+                        <td>15:10</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>17</td>
+                        <td>臺中市東區力行路217號</td>
+                        <td>15:10</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>18</td>
+                        <td>臺中市東區力行路239 號</td>
+                        <td>15:10</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>19</td>
+                        <td>臺中市東區精武路112號</td>
+                        <td>15:15</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>20</td>
+                        <td>臺中市東區進化路199之1號</td>
+                        <td>15:15</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>21</td>
+                        <td>臺中市東區進化路201號</td>
+                        <td>15:15</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>22</td>
+                        <td>臺中市東區進化路207號</td>
+                        <td>15:15</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>23</td>
+                        <td>臺中市東區精武路132號</td>
+                        <td>15:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>24</td>
+                        <td>臺中市東區精武路138號</td>
+                        <td>15:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>25</td>
+                        <td>臺中市東區精武路160巷2號</td>
+                        <td>15:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>26</td>
+                        <td>臺中市東區精武路180號</td>
+                        <td>15:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>27</td>
+                        <td>臺中市東區精武路181巷11號</td>
+                        <td>15:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>28</td>
+                        <td>臺中市東區精武路131號</td>
+                        <td>15:25</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>29</td>
+                        <td>臺中市東區精武路163號</td>
+                        <td>15:25</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>30</td>
+                        <td>臺中市東區精武路123號</td>
+                        <td>15:30</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>31</td>
+                        <td>臺中市東區進化路175號</td>
+                        <td>15:30</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>32</td>
+                        <td>臺中市東區自由路三段309號</td>
+                        <td>15:35</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>33</td>
+                        <td>臺中市東區進化路45號</td>
+                        <td>15:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>34</td>
+                        <td>臺中市東區南京路18號</td>
+                        <td>15:45</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>35</td>
+                        <td>臺中市東區進化路16號</td>
+                        <td>15:45</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>36</td>
+                        <td>臺中市東區進化路17號</td>
+                        <td>15:45</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>37</td>
+                        <td>臺中市東區進化路35號</td>
+                        <td>15:45</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>38</td>
+                        <td>臺中市東區南京路38號</td>
+                        <td>15:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>39</td>
+                        <td>臺中市東區南京路58號</td>
+                        <td>15:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>40</td>
+                        <td>臺中市東區進德路145號</td>
+                        <td>15:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>41</td>
+                        <td>臺中市東區自由路三段215號</td>
+                        <td>15:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>42</td>
+                        <td>臺中市東區進德路105號</td>
+                        <td>15:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>43</td>
+                        <td>臺中市東區進德路117號</td>
+                        <td>15:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>44</td>
+                        <td>臺中市東區進德路133號</td>
+                        <td>15:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>45</td>
+                        <td>臺中市東區自由路三段153號</td>
+                        <td>16:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>46</td>
+                        <td>臺中市東區自由路三段183號</td>
+                        <td>16:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>47</td>
+                        <td>臺中市東區自由路三段203號</td>
+                        <td>16:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>48</td>
+                        <td>臺中市東區自由路三段119號</td>
+                        <td>16:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>49</td>
+                        <td>臺中市東區自由路三段37號</td>
+                        <td>16:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>50</td>
+                        <td>臺中市東區自由路三段51號</td>
+                        <td>16:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、四</td>
+                    </tr>
+                
+                </tbody>
+                
+            </table>
+        </div><!-- table-responsive END -->
+
+
+        <div class="pagi text-center">
+          <ul class="pagination">
+              <li class="disabled"><a href="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5739828850&p=1" class="" data-index=""><i class="fa fa-chevron-left"></i> < </a></li><li class="active"><a href="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5739828850&p=1" class="" data-min="-50" data-max="-1" data-page="1">1</a></li><li class=""><a href="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5739828850&p=2" class="" data-min="0" data-max="49" data-page="2">2</a></li><li class=""><a href="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5739828850&p=3" class="" data-min="50" data-max="99" data-page="3">3</a></li><li class=""><a href="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5739828850&p=2" class="" data-index=""> > <i class="fa fa-chevron-right"></i></a></li>
+          </ul>
+        </div>
+
+
+
+
+    </div><!-- col-md-9 END -->
+
+</div><!-- row END -->
+
+
+
+
+
+
+
+            </div><!-- content END -->
+
+        </div><!-- container END -->
+    </div><!-- main-content END -->
+
+    <div class="footCooy">
+        <div class="container">
+            <p>
+                <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20191118152436" target="_blank" title="無障礙網站(另開新視窗)">
+                    <img src="images/Accessibility.jpg" border="0" width="88" height="31" alt="通過A無障礙網頁檢測" />
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/41156C14CC997554" target="_blank" title="隱私權保護政策" style="color:white;">
+                    隱私權保護政策
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/93E745565929795D" target="_blank" title="網站安全政策" style="color:white;">
+                    網站安全政策
+                </a>│
+                <a href="https://www.epa.gov.tw/public/Data/59710575671.pdf" target="_blank" title="資訊安全規範" style="color:white;">
+                    資訊安全規範
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/A33D3A6556ABFCD2" target="_blank" title="網站資料開放宣告" style="color:white;">
+                    網站資料開放宣告
+                </a>
+                <br />
+                行政院環保署 版權所有 © 2017 All Rights Reserved
+            </p>
+        </div>
+    </div>
+
+
+</div><!--wrapper -->
+
+
+
+<a href="#" class="scrollToTop" title="回頁首">Scroll To Top</a>
+
+</form>
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/dispPageBox/route/js/jquery-ui.min.js"></script>
+<script src="/dispPageBox/route/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.min.js"></script>
+<script src="/dispPageBox/route/assets/magnific/magnificPopup.min.js"></script>
+<script src="/dispPageBox/route/js/script.js"></script>
+</body>
+</html>

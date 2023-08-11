@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/>
+<meta name="keywords" content="垃圾車,清運路線,路線查詢,行政院環保署,環保署" />
+<meta name="description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:title" content="全國垃圾車清運路線查詢網,行政院環保署全國垃圾車清運路線查詢網" />
+<meta property="og:description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:site_name" content="全國垃圾車清運路線查詢網" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>路線資訊│全國垃圾車清運路線查詢網</title>
+<!--CSS-->
+<link rel="stylesheet" href="/dispPageBox/route/assets/fontAwesome/css/fontAwesome.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/magnific/magnificPopup.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/reset.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/style.css" />
+<link rel="shortcut icon" href="/dispPageBox/route/favicon.ico" />
+
+
+<!--[if lt ie 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<form name="mForm" method="post" action="./routeCP.aspx?ddsPageID=LINEINFO&amp;dbid=6591003279" id="mForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1E52EDA3" />
+</div>
+    <a class="skip-main" href="#anchorC" title="跳到主要內容">跳到主要內容</a>
+<div class="wrapper">
+
+    <div class="header">
+        <nav class="navbar navbar-default">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand" href="/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE&" title="全國垃圾車清運路線查詢網">全國垃圾車清運路線查詢網</h1>
+            </div>
+           
+            <div id="navbar" class="navbar-collapse collapse main-navbar">
+
+                <div class="container">
+
+                    <!-- 主導覽列 -->
+                    
+<!-- Main Nav Start -->
+
+<!-- start menu -->
+<ul class="nav nav-pills nav-justified"><!-- 若是在執行中的樣式，要在menu前方再加上 active  -->
+   
+		<li><a href='routeCP.aspx?ddsPageID=ROUTENEWS&' class='tab' title='公告訊息'><em>公告訊息</em></a></li>
+	 
+		<li><a href='routeCP.aspx?ddsPageID=ROUTELINK&' class='tab' title='相關連結'><em>相關連結</em></a></li>
+	 
+
+</ul>
+<!-- end menu -->
+
+
+
+                    <!-- <ul class="nav nav-pills nav-justified">
+                        <li><a href="path.html">清運路線查詢</a></li>
+                        <li><a href="news.html">公告訊息</a></li>
+                        <li class="active"><a href="link.html">相關連結</a></li>
+                    </ul> -->
+
+                </div><!--/.container-->
+
+            </div><!--/.nav-collapse -->
+
+        </nav>
+
+    </div><!-- header END -->
+
+    <h1 class="site-title">全國垃圾車清運路線查詢網</h1>
+
+    <div class="jumbotron">
+
+        <h2 class="main-title">路線資訊</h2>
+
+        <!-- 麵包屑 -->
+        
+
+    </div><!-- jumbotron END -->
+
+    
+    <div class="main-content">
+
+        <div class="container">
+
+            <div class="content">
+<a accesskey="C" name="C" id="anchorC" href="#C" title="快速鍵alt+C 回主要內容區" class="accesskey-link" style="top:7px; left: 0; z-index: 999;">:::</a>
+                <!-- 主內容開始 -->
+                
+<!--每頁列數，不分頁則設0-->
+
+
+<!-- /dispPageBox/trans.aspx?ddsPageID=ROUTE -->
+<a class="btn-back" href="/dispPageBox/trans.aspx?ddsPageID=ROUTE"><span class="fa fa-angle-left"></span>返回列表</a>
+<!-- <a class="btn-back" href="javascript: history.go(-1)"><span class="fa fa-angle-left"></span>返回列表</a> -->
+<!-- <h3 class="info-title">-->
+路線3晚上 
+<!--</h3>-->
+
+<div class="row">
+
+    <div class="sidebar col-sm-3">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">路線3晚上 資訊</h3>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt>縣市別</dt>
+                    <dd>新北市</dd>
+                    <dt>鄉鎮市區</dt>
+                    <dd>樹林區                   </dd>
+                    <dt>清運路線序號</dt>
+                    <dd>F23820016</dd>
+                    <dt>清運路線名稱</dt>
+                    <dd>路線3晚上</dd>
+                    <dt>清運方式</dt>
+                    <dd>沿線清運(不落地)</dd>
+                    <dt>清運車輛車號</dt>
+                    <dd></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">路線3晚上 數據</h3>
+            </div>
+            <div class="panel-body">
+                <div class="dataResult">
+                    <div class="result-item">
+                        <span class="num">7.38</span>
+                        <span class="result-title">清運路線距離(公里)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">3.77</span>
+                        <span class="result-title">每日清運垃圾量(公噸/日)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">5</span>
+                        <span class="result-title">清運頻率(週)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1</span>
+                        <span class="result-title">清運頻率(日)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-sm-3 END -->
+
+    <div class="resultArea col-sm-9">
+
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active">
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=6591003279'><span class="fa fa-list-ul"></span>路線資訊</a>
+            </li>
+            <li>
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEPIC&dbid=6591003279'><span class="fa fa-bus"></span>路線圖</a>
+            </li>
+        </ul>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            
+                <thead>
+                    <tr>
+                        <th>清運序</th>
+                        <th>清運點名稱描述</th>
+                        <th>清運時間</th>
+                        <th>一般垃圾</th>
+                        <th>廚餘回收</th>
+                        <th>資源回收</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>1</td>
+                        <td>日新街45號</td>
+                        <td>17:24</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>2</td>
+                        <td>長壽街2巷口</td>
+                        <td>17:25</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>3</td>
+                        <td>長壽街12號</td>
+                        <td>17:26</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>4</td>
+                        <td>長壽街28巷7號</td>
+                        <td>17:27</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>5</td>
+                        <td>中山路1段2巷6號</td>
+                        <td>17:29</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>6</td>
+                        <td>育英街36號</td>
+                        <td>17:35</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>7</td>
+                        <td>育英街90號</td>
+                        <td>17:37</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>8</td>
+                        <td>育英街165巷口</td>
+                        <td>17:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>9</td>
+                        <td>啟智街129-7號</td>
+                        <td>17:42</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>10</td>
+                        <td>啟智街128-11號</td>
+                        <td>17:44</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>11</td>
+                        <td>復興路282號</td>
+                        <td>17:45</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>12</td>
+                        <td>復興路308巷口</td>
+                        <td>17:49</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>13</td>
+                        <td>啟智街151巷尾</td>
+                        <td>17:52</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>14</td>
+                        <td>啟智街137巷1號</td>
+                        <td>17:56</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>15</td>
+                        <td>復興路295巷17號</td>
+                        <td>17:58</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>16</td>
+                        <td>育英街135巷5弄10號</td>
+                        <td>17:59</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>17</td>
+                        <td>日新街172巷6號</td>
+                        <td>18:03</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>18</td>
+                        <td>日新街139號</td>
+                        <td>18:04</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>19</td>
+                        <td>中山路1段242巷31號</td>
+                        <td>18:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>20</td>
+                        <td>文化街10巷口</td>
+                        <td>18:06</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>21</td>
+                        <td>文化街25巷5弄口</td>
+                        <td>19:10</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>22</td>
+                        <td>復興路373巷6號</td>
+                        <td>19:11</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>23</td>
+                        <td>復興路373巷7弄5號</td>
+                        <td>19:12</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>24</td>
+                        <td>復興路335巷18號</td>
+                        <td>19:13</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>25</td>
+                        <td>復興路335巷6弄3號</td>
+                        <td>19:14</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>26</td>
+                        <td>復興路373巷3弄口</td>
+                        <td>19:15</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>27</td>
+                        <td>文化街33號</td>
+                        <td>19:16</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>28</td>
+                        <td>中山路1段306巷1號</td>
+                        <td>19:18</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>29</td>
+                        <td>中山路1段306巷51弄9號</td>
+                        <td>19:19</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>30</td>
+                        <td>中山路1段306巷11號</td>
+                        <td>19:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>31</td>
+                        <td>中山路1段306巷26號</td>
+                        <td>19:21</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>32</td>
+                        <td>中山路1段306巷51弄口</td>
+                        <td>19:22</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>33</td>
+                        <td>中山路1段306巷80弄口</td>
+                        <td>19:23</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>34</td>
+                        <td>備前街36巷口</td>
+                        <td>19:24</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>35</td>
+                        <td>中山路2段34號</td>
+                        <td>19:27</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>36</td>
+                        <td>中山路2段76巷8號</td>
+                        <td>19:28</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>37</td>
+                        <td>中山路2段82巷1號</td>
+                        <td>19:29</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>38</td>
+                        <td>復興路464巷口</td>
+                        <td>19:31</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>39</td>
+                        <td>復興路464巷1號</td>
+                        <td>19:36</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>40</td>
+                        <td>復興路406巷口</td>
+                        <td>19:38</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>41</td>
+                        <td>大安路593號</td>
+                        <td>19:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>42</td>
+                        <td>中山路2段214巷口</td>
+                        <td>19:42</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>43</td>
+                        <td>東和街50號</td>
+                        <td>19:43</td>
+                        <td>一、四、六</td>
+                        <td>一、四、六</td>
+                        <td>一、四、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>44</td>
+                        <td>東和街32號</td>
+                        <td>19:45</td>
+                        <td>一、四、六</td>
+                        <td>一、四、六</td>
+                        <td>一、四、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>45</td>
+                        <td>東和街18巷</td>
+                        <td>19:48</td>
+                        <td>一、四、六</td>
+                        <td>一、四、六</td>
+                        <td>一、四、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>46</td>
+                        <td>東和街1號</td>
+                        <td>19:51</td>
+                        <td>一、四、六</td>
+                        <td>一、四、六</td>
+                        <td>一、四、六</td>
+                    </tr>
+                
+                </tbody>
+                
+            </table>
+        </div><!-- table-responsive END -->
+
+
+        <div class="pagi text-center">
+          <ul class="pagination">
+              
+          </ul>
+        </div>
+
+
+
+
+    </div><!-- col-md-9 END -->
+
+</div><!-- row END -->
+
+
+
+
+
+
+
+            </div><!-- content END -->
+
+        </div><!-- container END -->
+    </div><!-- main-content END -->
+
+    <div class="footCooy">
+        <div class="container">
+            <p>
+                <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20191118152436" target="_blank" title="無障礙網站(另開新視窗)">
+                    <img src="images/Accessibility.jpg" border="0" width="88" height="31" alt="通過A無障礙網頁檢測" />
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/41156C14CC997554" target="_blank" title="隱私權保護政策" style="color:white;">
+                    隱私權保護政策
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/93E745565929795D" target="_blank" title="網站安全政策" style="color:white;">
+                    網站安全政策
+                </a>│
+                <a href="https://www.epa.gov.tw/public/Data/59710575671.pdf" target="_blank" title="資訊安全規範" style="color:white;">
+                    資訊安全規範
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/A33D3A6556ABFCD2" target="_blank" title="網站資料開放宣告" style="color:white;">
+                    網站資料開放宣告
+                </a>
+                <br />
+                行政院環保署 版權所有 © 2017 All Rights Reserved
+            </p>
+        </div>
+    </div>
+
+
+</div><!--wrapper -->
+
+
+
+<a href="#" class="scrollToTop" title="回頁首">Scroll To Top</a>
+
+</form>
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/dispPageBox/route/js/jquery-ui.min.js"></script>
+<script src="/dispPageBox/route/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.min.js"></script>
+<script src="/dispPageBox/route/assets/magnific/magnificPopup.min.js"></script>
+<script src="/dispPageBox/route/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/>
+<meta name="keywords" content="垃圾車,清運路線,路線查詢,行政院環保署,環保署" />
+<meta name="description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:title" content="全國垃圾車清運路線查詢網,行政院環保署全國垃圾車清運路線查詢網" />
+<meta property="og:description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:site_name" content="全國垃圾車清運路線查詢網" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>路線資訊│全國垃圾車清運路線查詢網</title>
+<!--CSS-->
+<link rel="stylesheet" href="/dispPageBox/route/assets/fontAwesome/css/fontAwesome.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/magnific/magnificPopup.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/reset.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/style.css" />
+<link rel="shortcut icon" href="/dispPageBox/route/favicon.ico" />
+
+
+<!--[if lt ie 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<form name="mForm" method="post" action="./routeCP.aspx?ddsPageID=LINEINFO&amp;dbid=5852832645" id="mForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1E52EDA3" />
+</div>
+    <a class="skip-main" href="#anchorC" title="跳到主要內容">跳到主要內容</a>
+<div class="wrapper">
+
+    <div class="header">
+        <nav class="navbar navbar-default">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand" href="/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE&" title="全國垃圾車清運路線查詢網">全國垃圾車清運路線查詢網</h1>
+            </div>
+           
+            <div id="navbar" class="navbar-collapse collapse main-navbar">
+
+                <div class="container">
+
+                    <!-- 主導覽列 -->
+                    
+<!-- Main Nav Start -->
+
+<!-- start menu -->
+<ul class="nav nav-pills nav-justified"><!-- 若是在執行中的樣式，要在menu前方再加上 active  -->
+   
+		<li><a href='routeCP.aspx?ddsPageID=ROUTENEWS&' class='tab' title='公告訊息'><em>公告訊息</em></a></li>
+	 
+		<li><a href='routeCP.aspx?ddsPageID=ROUTELINK&' class='tab' title='相關連結'><em>相關連結</em></a></li>
+	 
+
+</ul>
+<!-- end menu -->
+
+
+
+                    <!-- <ul class="nav nav-pills nav-justified">
+                        <li><a href="path.html">清運路線查詢</a></li>
+                        <li><a href="news.html">公告訊息</a></li>
+                        <li class="active"><a href="link.html">相關連結</a></li>
+                    </ul> -->
+
+                </div><!--/.container-->
+
+            </div><!--/.nav-collapse -->
+
+        </nav>
+
+    </div><!-- header END -->
+
+    <h1 class="site-title">全國垃圾車清運路線查詢網</h1>
+
+    <div class="jumbotron">
+
+        <h2 class="main-title">路線資訊</h2>
+
+        <!-- 麵包屑 -->
+        
+
+    </div><!-- jumbotron END -->
+
+    
+    <div class="main-content">
+
+        <div class="container">
+
+            <div class="content">
+<a accesskey="C" name="C" id="anchorC" href="#C" title="快速鍵alt+C 回主要內容區" class="accesskey-link" style="top:7px; left: 0; z-index: 999;">:::</a>
+                <!-- 主內容開始 -->
+                
+<!--每頁列數，不分頁則設0-->
+
+
+<!-- /dispPageBox/trans.aspx?ddsPageID=ROUTE -->
+<a class="btn-back" href="/dispPageBox/trans.aspx?ddsPageID=ROUTE"><span class="fa fa-angle-left"></span>返回列表</a>
+<!-- <a class="btn-back" href="javascript: history.go(-1)"><span class="fa fa-angle-left"></span>返回列表</a> -->
+<!-- <h3 class="info-title">-->
+KEL2282星期四路線 
+<!--</h3>-->
+
+<div class="row">
+
+    <div class="sidebar col-sm-3">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">KEL2282星期四路線 資訊</h3>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt>縣市別</dt>
+                    <dd>臺中市</dd>
+                    <dt>鄉鎮市區</dt>
+                    <dd>大甲區                   </dd>
+                    <dt>清運路線序號</dt>
+                    <dd>B43720022</dd>
+                    <dt>清運路線名稱</dt>
+                    <dd>KEL2282星期四路線</dd>
+                    <dt>清運方式</dt>
+                    <dd>沿線清運(不落地)</dd>
+                    <dt>清運車輛車號</dt>
+                    <dd>KEL2282(備用車號:KEB0200) </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">KEL2282星期四路線 數據</h3>
+            </div>
+            <div class="panel-body">
+                <div class="dataResult">
+                    <div class="result-item">
+                        <span class="num">62.00</span>
+                        <span class="result-title">清運路線距離(公里)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">2.60</span>
+                        <span class="result-title">每日清運垃圾量(公噸/日)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">5</span>
+                        <span class="result-title">清運頻率(週)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1</span>
+                        <span class="result-title">清運頻率(日)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-sm-3 END -->
+
+    <div class="resultArea col-sm-9">
+
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active">
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5852832645'><span class="fa fa-list-ul"></span>路線資訊</a>
+            </li>
+            <li>
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEPIC&dbid=5852832645'><span class="fa fa-bus"></span>路線圖</a>
+            </li>
+        </ul>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            
+                <thead>
+                    <tr>
+                        <th>清運序</th>
+                        <th>清運點名稱描述</th>
+                        <th>清運時間</th>
+                        <th>一般垃圾</th>
+                        <th>廚餘回收</th>
+                        <th>資源回收</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>1</td>
+                        <td>臺中市大甲區甲東路542巷42號</td>
+                        <td>15:02</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>2</td>
+                        <td>臺中市大甲區水美街96巷21號</td>
+                        <td>15:10</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>3</td>
+                        <td>臺中市大甲區甲東路585巷13號</td>
+                        <td>15:14</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>4</td>
+                        <td>臺中市大甲區水源路452巷8弄5號</td>
+                        <td>15:18</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>5</td>
+                        <td>臺中市大甲區水源路452巷6弄7號</td>
+                        <td>15:20</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>6</td>
+                        <td>臺中市大甲區水源路706巷121號</td>
+                        <td>15:25</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>7</td>
+                        <td>臺中市大甲區甲后路五段682號</td>
+                        <td>15:29</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>8</td>
+                        <td>臺中市大甲區甲后路五段652巷22號</td>
+                        <td>15:31</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>9</td>
+                        <td>臺中市大甲區中山路1段935巷9號</td>
+                        <td>15:35</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>10</td>
+                        <td>臺中市大甲區中山路1段786巷23號</td>
+                        <td>15:37</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>11</td>
+                        <td>臺中市大甲區龍潭路99號</td>
+                        <td>15:39</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>12</td>
+                        <td>臺中市大甲區中山路1段873巷13號</td>
+                        <td>15:45</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>13</td>
+                        <td>臺中市大甲區中山路1段823巷2號</td>
+                        <td>15:48</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>14</td>
+                        <td>臺中市大甲區順天路15巷1號</td>
+                        <td>15:51</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>15</td>
+                        <td>臺中市大甲區新美街35號</td>
+                        <td>15:53</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>16</td>
+                        <td>臺中市大甲區光明路119巷35號</td>
+                        <td>15:55</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>17</td>
+                        <td>臺中市大甲區順天路85巷22號</td>
+                        <td>15:56</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>18</td>
+                        <td>臺中市大甲區新美街70巷41號</td>
+                        <td>16:02</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>19</td>
+                        <td>臺中市大甲區永順街60巷7號</td>
+                        <td>16:04</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>20</td>
+                        <td>臺中市大甲區義和三街127號</td>
+                        <td>16:09</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>21</td>
+                        <td>臺中市大甲區中山路1段484巷75號</td>
+                        <td>16:12</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>22</td>
+                        <td>臺中市大甲區義和二街120巷2號</td>
+                        <td>16:18</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>23</td>
+                        <td>臺中市大甲區武營路12號</td>
+                        <td>16:25</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>24</td>
+                        <td>臺中市大甲區大甲街86號</td>
+                        <td>16:43</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>25</td>
+                        <td>臺中市大甲區育德路201巷17號</td>
+                        <td>16:46</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>26</td>
+                        <td>臺中市大甲區育德路302巷10號</td>
+                        <td>16:48</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>27</td>
+                        <td>臺中市大甲區中山路1段1158巷14號</td>
+                        <td>16:53</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>28</td>
+                        <td>臺中市大甲區大安港路312-3號</td>
+                        <td>17:15</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>29</td>
+                        <td>臺中市大甲區橫圳街248號</td>
+                        <td>17:23</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>30</td>
+                        <td>臺中市大甲區農安路168-3號</td>
+                        <td>17:25</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>31</td>
+                        <td>臺中市大甲區賢仁路158號</td>
+                        <td>17:28</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>32</td>
+                        <td>臺中市大甲區和平路398巷2-2號</td>
+                        <td>17:31</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>33</td>
+                        <td>臺中市大甲區通天路207巷101號</td>
+                        <td>17:34</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>34</td>
+                        <td>臺中市大甲區和平路426號</td>
+                        <td>17:35</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>35</td>
+                        <td>臺中市大甲區東西七路一段309巷6號</td>
+                        <td>17:38</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>36</td>
+                        <td>臺中市大甲區臨江路47巷1號</td>
+                        <td>17:48</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>37</td>
+                        <td>臺中市大甲區臨江路46-33號</td>
+                        <td>17:52</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>38</td>
+                        <td>臺中市大甲區臨江路79-3號</td>
+                        <td>17:53</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>39</td>
+                        <td>臺中市大甲區中山路2段180巷9號</td>
+                        <td>17:54</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>40</td>
+                        <td>臺中市大甲區經國路2375巷8弄60號</td>
+                        <td>18:04</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>41</td>
+                        <td>臺中市大甲區臨江路112巷8之2號</td>
+                        <td>18:08</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>42</td>
+                        <td>臺中市大甲區臨江路81號</td>
+                        <td>18:16</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                    <tr>
+                        <td>43</td>
+                        <td>臺中市大甲區中山路二段916巷1號</td>
+                        <td>18:30</td>
+                        <td>四</td>
+                        <td>四</td>
+                        <td>四</td>
+                    </tr>
+                
+                </tbody>
+                
+            </table>
+        </div><!-- table-responsive END -->
+
+
+        <div class="pagi text-center">
+          <ul class="pagination">
+              
+          </ul>
+        </div>
+
+
+
+
+    </div><!-- col-md-9 END -->
+
+</div><!-- row END -->
+
+
+
+
+
+
+
+            </div><!-- content END -->
+
+        </div><!-- container END -->
+    </div><!-- main-content END -->
+
+    <div class="footCooy">
+        <div class="container">
+            <p>
+                <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20191118152436" target="_blank" title="無障礙網站(另開新視窗)">
+                    <img src="images/Accessibility.jpg" border="0" width="88" height="31" alt="通過A無障礙網頁檢測" />
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/41156C14CC997554" target="_blank" title="隱私權保護政策" style="color:white;">
+                    隱私權保護政策
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/93E745565929795D" target="_blank" title="網站安全政策" style="color:white;">
+                    網站安全政策
+                </a>│
+                <a href="https://www.epa.gov.tw/public/Data/59710575671.pdf" target="_blank" title="資訊安全規範" style="color:white;">
+                    資訊安全規範
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/A33D3A6556ABFCD2" target="_blank" title="網站資料開放宣告" style="color:white;">
+                    網站資料開放宣告
+                </a>
+                <br />
+                行政院環保署 版權所有 © 2017 All Rights Reserved
+            </p>
+        </div>
+    </div>
+
+
+</div><!--wrapper -->
+
+
+
+<a href="#" class="scrollToTop" title="回頁首">Scroll To Top</a>
+
+</form>
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/dispPageBox/route/js/jquery-ui.min.js"></script>
+<script src="/dispPageBox/route/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.min.js"></script>
+<script src="/dispPageBox/route/assets/magnific/magnificPopup.min.js"></script>
+<script src="/dispPageBox/route/js/script.js"></script>
+</body>
+</html>

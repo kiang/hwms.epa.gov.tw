@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/>
+<meta name="keywords" content="垃圾車,清運路線,路線查詢,行政院環保署,環保署" />
+<meta name="description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:title" content="全國垃圾車清運路線查詢網,行政院環保署全國垃圾車清運路線查詢網" />
+<meta property="og:description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:site_name" content="全國垃圾車清運路線查詢網" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>路線資訊│全國垃圾車清運路線查詢網</title>
+<!--CSS-->
+<link rel="stylesheet" href="/dispPageBox/route/assets/fontAwesome/css/fontAwesome.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/magnific/magnificPopup.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/reset.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/style.css" />
+<link rel="shortcut icon" href="/dispPageBox/route/favicon.ico" />
+
+
+<!--[if lt ie 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<form name="mForm" method="post" action="./routeCP.aspx?ddsPageID=LINEINFO&amp;dbid=5357813996" id="mForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1E52EDA3" />
+</div>
+    <a class="skip-main" href="#anchorC" title="跳到主要內容">跳到主要內容</a>
+<div class="wrapper">
+
+    <div class="header">
+        <nav class="navbar navbar-default">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand" href="/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE&" title="全國垃圾車清運路線查詢網">全國垃圾車清運路線查詢網</h1>
+            </div>
+           
+            <div id="navbar" class="navbar-collapse collapse main-navbar">
+
+                <div class="container">
+
+                    <!-- 主導覽列 -->
+                    
+<!-- Main Nav Start -->
+
+<!-- start menu -->
+<ul class="nav nav-pills nav-justified"><!-- 若是在執行中的樣式，要在menu前方再加上 active  -->
+   
+		<li><a href='routeCP.aspx?ddsPageID=ROUTENEWS&' class='tab' title='公告訊息'><em>公告訊息</em></a></li>
+	 
+		<li><a href='routeCP.aspx?ddsPageID=ROUTELINK&' class='tab' title='相關連結'><em>相關連結</em></a></li>
+	 
+
+</ul>
+<!-- end menu -->
+
+
+
+                    <!-- <ul class="nav nav-pills nav-justified">
+                        <li><a href="path.html">清運路線查詢</a></li>
+                        <li><a href="news.html">公告訊息</a></li>
+                        <li class="active"><a href="link.html">相關連結</a></li>
+                    </ul> -->
+
+                </div><!--/.container-->
+
+            </div><!--/.nav-collapse -->
+
+        </nav>
+
+    </div><!-- header END -->
+
+    <h1 class="site-title">全國垃圾車清運路線查詢網</h1>
+
+    <div class="jumbotron">
+
+        <h2 class="main-title">路線資訊</h2>
+
+        <!-- 麵包屑 -->
+        
+
+    </div><!-- jumbotron END -->
+
+    
+    <div class="main-content">
+
+        <div class="container">
+
+            <div class="content">
+<a accesskey="C" name="C" id="anchorC" href="#C" title="快速鍵alt+C 回主要內容區" class="accesskey-link" style="top:7px; left: 0; z-index: 999;">:::</a>
+                <!-- 主內容開始 -->
+                
+<!--每頁列數，不分頁則設0-->
+
+
+<!-- /dispPageBox/trans.aspx?ddsPageID=ROUTE -->
+<a class="btn-back" href="/dispPageBox/trans.aspx?ddsPageID=ROUTE"><span class="fa fa-angle-left"></span>返回列表</a>
+<!-- <a class="btn-back" href="javascript: history.go(-1)"><span class="fa fa-angle-left"></span>返回列表</a> -->
+<!-- <h3 class="info-title">-->
+6線延平 
+<!--</h3>-->
+
+<div class="row">
+
+    <div class="sidebar col-sm-3">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">6線延平 資訊</h3>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt>縣市別</dt>
+                    <dd>臺北市</dd>
+                    <dt>鄉鎮市區</dt>
+                    <dd>大同區                   </dd>
+                    <dt>清運路線序號</dt>
+                    <dd>A10320007</dd>
+                    <dt>清運路線名稱</dt>
+                    <dd>6線延平</dd>
+                    <dt>清運方式</dt>
+                    <dd>沿線清運(不落地)</dd>
+                    <dt>清運車輛車號</dt>
+                    <dd>KEA1675(備用車號:) </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">6線延平 數據</h3>
+            </div>
+            <div class="panel-body">
+                <div class="dataResult">
+                    <div class="result-item">
+                        <span class="num">3.80</span>
+                        <span class="result-title">清運路線距離(公里)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">31.00</span>
+                        <span class="result-title">每日清運垃圾量(公噸/日)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">5</span>
+                        <span class="result-title">清運頻率(週)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1</span>
+                        <span class="result-title">清運頻率(日)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-sm-3 END -->
+
+    <div class="resultArea col-sm-9">
+
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active">
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5357813996'><span class="fa fa-list-ul"></span>路線資訊</a>
+            </li>
+            <li>
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEPIC&dbid=5357813996'><span class="fa fa-bus"></span>路線圖</a>
+            </li>
+        </ul>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            
+                <thead>
+                    <tr>
+                        <th>清運序</th>
+                        <th>清運點名稱描述</th>
+                        <th>清運時間</th>
+                        <th>一般垃圾</th>
+                        <th>廚餘回收</th>
+                        <th>資源回收</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>1</td>
+                        <td>西寧北路民生西路口
+</td>
+                        <td>16:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>2</td>
+                        <td>西寧北路86巷口
+</td>
+                        <td>16:04</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>3</td>
+                        <td>西寧北路78號
+</td>
+                        <td>16:09</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>4</td>
+                        <td>西寧北路68號
+</td>
+                        <td>16:13</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>5</td>
+                        <td>南京西路434巷口
+</td>
+                        <td>16:17</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>6</td>
+                        <td>延平北路1段66巷口
+</td>
+                        <td>16:24</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>7</td>
+                        <td>延平北路1段22號
+</td>
+                        <td>16:29</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>8</td>
+                        <td>忠孝西路13號
+</td>
+                        <td>16:36</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>9</td>
+                        <td>西寧北路3巷口
+</td>
+                        <td>16:43</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>10</td>
+                        <td>延平北路2段61巷口
+</td>
+                        <td>16:49</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>11</td>
+                        <td>延平北路2段97號
+</td>
+                        <td>16:54</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>12</td>
+                        <td>涼州街安西街口
+</td>
+                        <td>17:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>13</td>
+                        <td>臺北市大同區民生西路民樂街口
+</td>
+                        <td>18:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>14</td>
+                        <td>臺北市大同區民生西路迪化街口
+</td>
+                        <td>18:54</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>15</td>
+                        <td>臺北市大同區歸綏街忠和公園
+</td>
+                        <td>19:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>16</td>
+                        <td>臺北市大同區歸綏街民樂街口
+</td>
+                        <td>19:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>17</td>
+                        <td>臺北市大同區延平北路二段144巷口
+</td>
+                        <td>19:11</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>18</td>
+                        <td>臺北市大同區延平北路二段60巷口
+</td>
+                        <td>19:16</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>19</td>
+                        <td>臺北市大同區延平北路二段36巷口
+</td>
+                        <td>19:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>20</td>
+                        <td>臺北市大同區延平北路甘谷街口
+</td>
+                        <td>19:25</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>21</td>
+                        <td>臺北市大同區長安西路253號
+</td>
+                        <td>19:30</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>22</td>
+                        <td>臺北市大同區長安西路285號
+</td>
+                        <td>19:34</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>23</td>
+                        <td>臺北市大同區長安西路289號
+</td>
+                        <td>19:39</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>24</td>
+                        <td>臺北市大同區長安西路貴德街口
+</td>
+                        <td>19:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>25</td>
+                        <td>臺北市大同區環河北路一段83號
+</td>
+                        <td>19:47</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>26</td>
+                        <td>臺北市大同區環河北路一段141號
+</td>
+                        <td>19:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>27</td>
+                        <td>臺北市大同區環河北路一段迪化街224巷底
+</td>
+                        <td>19:54</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>28</td>
+                        <td>臺北市大同區延平北路一段17號
+</td>
+                        <td>21:36</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>29</td>
+                        <td>臺北市大同區延平北路一段69巷口
+</td>
+                        <td>21:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>30</td>
+                        <td>臺北市大同區延平北路二段61巷口
+</td>
+                        <td>21:47</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>31</td>
+                        <td>臺北市大同區保安街78巷口
+</td>
+                        <td>21:53</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>32</td>
+                        <td>臺北市大同區保安街甘州街口
+</td>
+                        <td>21:57</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>33</td>
+                        <td>臺北市大同區甘州街1號前
+</td>
+                        <td>22:02</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>34</td>
+                        <td>臺北市大同區歸綏街209號
+</td>
+                        <td>22:06</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                </tbody>
+                
+            </table>
+        </div><!-- table-responsive END -->
+
+
+        <div class="pagi text-center">
+          <ul class="pagination">
+              
+          </ul>
+        </div>
+
+
+
+
+    </div><!-- col-md-9 END -->
+
+</div><!-- row END -->
+
+
+
+
+
+
+
+            </div><!-- content END -->
+
+        </div><!-- container END -->
+    </div><!-- main-content END -->
+
+    <div class="footCooy">
+        <div class="container">
+            <p>
+                <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20191118152436" target="_blank" title="無障礙網站(另開新視窗)">
+                    <img src="images/Accessibility.jpg" border="0" width="88" height="31" alt="通過A無障礙網頁檢測" />
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/41156C14CC997554" target="_blank" title="隱私權保護政策" style="color:white;">
+                    隱私權保護政策
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/93E745565929795D" target="_blank" title="網站安全政策" style="color:white;">
+                    網站安全政策
+                </a>│
+                <a href="https://www.epa.gov.tw/public/Data/59710575671.pdf" target="_blank" title="資訊安全規範" style="color:white;">
+                    資訊安全規範
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/A33D3A6556ABFCD2" target="_blank" title="網站資料開放宣告" style="color:white;">
+                    網站資料開放宣告
+                </a>
+                <br />
+                行政院環保署 版權所有 © 2017 All Rights Reserved
+            </p>
+        </div>
+    </div>
+
+
+</div><!--wrapper -->
+
+
+
+<a href="#" class="scrollToTop" title="回頁首">Scroll To Top</a>
+
+</form>
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/dispPageBox/route/js/jquery-ui.min.js"></script>
+<script src="/dispPageBox/route/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.min.js"></script>
+<script src="/dispPageBox/route/assets/magnific/magnificPopup.min.js"></script>
+<script src="/dispPageBox/route/js/script.js"></script>
+</body>
+</html>

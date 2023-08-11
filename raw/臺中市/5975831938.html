@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/>
+<meta name="keywords" content="垃圾車,清運路線,路線查詢,行政院環保署,環保署" />
+<meta name="description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:title" content="全國垃圾車清運路線查詢網,行政院環保署全國垃圾車清運路線查詢網" />
+<meta property="og:description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:site_name" content="全國垃圾車清運路線查詢網" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>路線資訊│全國垃圾車清運路線查詢網</title>
+<!--CSS-->
+<link rel="stylesheet" href="/dispPageBox/route/assets/fontAwesome/css/fontAwesome.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/magnific/magnificPopup.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/reset.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/style.css" />
+<link rel="shortcut icon" href="/dispPageBox/route/favicon.ico" />
+
+
+<!--[if lt ie 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<form name="mForm" method="post" action="./routeCP.aspx?ddsPageID=LINEINFO&amp;dbid=5975831938" id="mForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1E52EDA3" />
+</div>
+    <a class="skip-main" href="#anchorC" title="跳到主要內容">跳到主要內容</a>
+<div class="wrapper">
+
+    <div class="header">
+        <nav class="navbar navbar-default">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand" href="/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE&" title="全國垃圾車清運路線查詢網">全國垃圾車清運路線查詢網</h1>
+            </div>
+           
+            <div id="navbar" class="navbar-collapse collapse main-navbar">
+
+                <div class="container">
+
+                    <!-- 主導覽列 -->
+                    
+<!-- Main Nav Start -->
+
+<!-- start menu -->
+<ul class="nav nav-pills nav-justified"><!-- 若是在執行中的樣式，要在menu前方再加上 active  -->
+   
+		<li><a href='routeCP.aspx?ddsPageID=ROUTENEWS&' class='tab' title='公告訊息'><em>公告訊息</em></a></li>
+	 
+		<li><a href='routeCP.aspx?ddsPageID=ROUTELINK&' class='tab' title='相關連結'><em>相關連結</em></a></li>
+	 
+
+</ul>
+<!-- end menu -->
+
+
+
+                    <!-- <ul class="nav nav-pills nav-justified">
+                        <li><a href="path.html">清運路線查詢</a></li>
+                        <li><a href="news.html">公告訊息</a></li>
+                        <li class="active"><a href="link.html">相關連結</a></li>
+                    </ul> -->
+
+                </div><!--/.container-->
+
+            </div><!--/.nav-collapse -->
+
+        </nav>
+
+    </div><!-- header END -->
+
+    <h1 class="site-title">全國垃圾車清運路線查詢網</h1>
+
+    <div class="jumbotron">
+
+        <h2 class="main-title">路線資訊</h2>
+
+        <!-- 麵包屑 -->
+        
+
+    </div><!-- jumbotron END -->
+
+    
+    <div class="main-content">
+
+        <div class="container">
+
+            <div class="content">
+<a accesskey="C" name="C" id="anchorC" href="#C" title="快速鍵alt+C 回主要內容區" class="accesskey-link" style="top:7px; left: 0; z-index: 999;">:::</a>
+                <!-- 主內容開始 -->
+                
+<!--每頁列數，不分頁則設0-->
+
+
+<!-- /dispPageBox/trans.aspx?ddsPageID=ROUTE -->
+<a class="btn-back" href="/dispPageBox/trans.aspx?ddsPageID=ROUTE"><span class="fa fa-angle-left"></span>返回列表</a>
+<!-- <a class="btn-back" href="javascript: history.go(-1)"><span class="fa fa-angle-left"></span>返回列表</a> -->
+<!-- <h3 class="info-title">-->
+蔗廍小 
+<!--</h3>-->
+
+<div class="row">
+
+    <div class="sidebar col-sm-3">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">蔗廍小 資訊</h3>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt>縣市別</dt>
+                    <dd>臺中市</dd>
+                    <dt>鄉鎮市區</dt>
+                    <dd>大肚區                   </dd>
+                    <dt>清運路線序號</dt>
+                    <dd>B43220004</dd>
+                    <dt>清運路線名稱</dt>
+                    <dd>蔗廍小</dd>
+                    <dt>清運方式</dt>
+                    <dd>沿線清運(不落地)</dd>
+                    <dt>清運車輛車號</dt>
+                    <dd>876VP(備用車號:341UR) </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">蔗廍小 數據</h3>
+            </div>
+            <div class="panel-body">
+                <div class="dataResult">
+                    <div class="result-item">
+                        <span class="num">50.00</span>
+                        <span class="result-title">清運路線距離(公里)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">3.80</span>
+                        <span class="result-title">每日清運垃圾量(公噸/日)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">5</span>
+                        <span class="result-title">清運頻率(週)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1</span>
+                        <span class="result-title">清運頻率(日)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-sm-3 END -->
+
+    <div class="resultArea col-sm-9">
+
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active">
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5975831938'><span class="fa fa-list-ul"></span>路線資訊</a>
+            </li>
+            <li>
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEPIC&dbid=5975831938'><span class="fa fa-bus"></span>路線圖</a>
+            </li>
+        </ul>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            
+                <thead>
+                    <tr>
+                        <th>清運序</th>
+                        <th>清運點名稱描述</th>
+                        <th>清運時間</th>
+                        <th>一般垃圾</th>
+                        <th>廚餘回收</th>
+                        <th>資源回收</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>1</td>
+                        <td>臺中市大肚區頂街里榮華街102巷15弄1號</td>
+                        <td>16:18</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>2</td>
+                        <td>臺中市大肚區自由路888號(穗億企業行)前</td>
+                        <td>16:23</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>3</td>
+                        <td>臺中市大肚區平等街185號(鎮家寶大樓)</td>
+                        <td>16:28</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>4</td>
+                        <td>臺中市大肚區沙田路3段524巷6號(聖媽廟前)</td>
+                        <td>16:31</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>5</td>
+                        <td>臺中市大肚區沙田路3段656號 （全國汽車修配廠）</td>
+                        <td>16:35</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>6</td>
+                        <td>臺中市大肚區沙田路3段800號</td>
+                        <td>16:37</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>7</td>
+                        <td>臺中市大肚區沙田路3段734巷51號</td>
+                        <td>16:41</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>8</td>
+                        <td>臺中市大肚區沙田路3段824巷2號</td>
+                        <td>16:41</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>9</td>
+                        <td>臺中市大肚區沙田路3段888巷1號(社區活動中心前)</td>
+                        <td>16:45</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>10</td>
+                        <td>臺中市大肚區沙田路3段889巷23號</td>
+                        <td>16:57</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>11</td>
+                        <td>臺中市大肚區沙田路3段859號(鴨肉冬粉前)</td>
+                        <td>16:59</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>12</td>
+                        <td>臺中市大肚區中沙路1之2號(蔗廍里活動中心)</td>
+                        <td>17:15</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>13</td>
+                        <td>臺中市大肚區太平路8巷102號</td>
+                        <td>17:24</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>14</td>
+                        <td>臺中市大肚區中沙路164巷1弄101號(自強新城)</td>
+                        <td>17:31</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>15</td>
+                        <td>臺中市大肚區中沙路164巷2弄75號</td>
+                        <td>17:39</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>16</td>
+                        <td>臺中市大肚區中沙路164巷3弄103號(全家便利商店前)</td>
+                        <td>17:45</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>17</td>
+                        <td>臺中市大肚區中沙路164巷4弄86號</td>
+                        <td>17:54</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>18</td>
+                        <td>臺中市大肚區中沙路164巷5弄101號</td>
+                        <td>17:59</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>19</td>
+                        <td>臺中市大肚區中沙路164巷6弄106號</td>
+                        <td>18:05</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>20</td>
+                        <td>臺中市大肚區中沙路164巷7弄116-1號</td>
+                        <td>18:08</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>21</td>
+                        <td>臺中市大肚區遊園路2段170巷10號</td>
+                        <td>18:12</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>22</td>
+                        <td>臺中市大肚區遊園路2段133巷81號(德昌林園大樓)</td>
+                        <td>18:19</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>23</td>
+                        <td>臺中市大肚區遊園路1段150巷121號（中和國宅社區）</td>
+                        <td>18:31</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>24</td>
+                        <td>臺中市大肚區瑞井里遊園路1段87巷3號</td>
+                        <td>18:40</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>25</td>
+                        <td>臺中市大肚區遊園路1段52巷52-7號(瑞安宮旁)</td>
+                        <td>18:50</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>26</td>
+                        <td>臺中市大肚區瑞井路82號</td>
+                        <td>19:12</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>27</td>
+                        <td>臺中市大肚區瑞井路118巷11號</td>
+                        <td>19:15</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>28</td>
+                        <td>臺中市大肚區太平路2-1號(瑞峰國小)</td>
+                        <td>19:25</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>29</td>
+                        <td>臺中市大肚區太平路1巷1弄1號</td>
+                        <td>19:31</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>30</td>
+                        <td>臺中市大肚區瑞井路65巷63號(舊庄內前)</td>
+                        <td>19:34</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>31</td>
+                        <td>臺中市大肚區遊園路1段63巷34號</td>
+                        <td>19:46</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>32</td>
+                        <td>臺中市大肚區遊園路1段70巷16號（中富社區）</td>
+                        <td>19:53</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>33</td>
+                        <td>臺中市大肚區遊園路1段3巷12號</td>
+                        <td>20:05</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>34</td>
+                        <td>臺中市大肚區遊園路1段10巷8-6號</td>
+                        <td>20:11</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                    <tr>
+                        <td>35</td>
+                        <td>臺中市大肚區遊園路1段62巷4號（結束收集）</td>
+                        <td>20:14</td>
+                        <td>二、五</td>
+                        <td>二、五</td>
+                        <td></td>
+                    </tr>
+                
+                </tbody>
+                
+            </table>
+        </div><!-- table-responsive END -->
+
+
+        <div class="pagi text-center">
+          <ul class="pagination">
+              
+          </ul>
+        </div>
+
+
+
+
+    </div><!-- col-md-9 END -->
+
+</div><!-- row END -->
+
+
+
+
+
+
+
+            </div><!-- content END -->
+
+        </div><!-- container END -->
+    </div><!-- main-content END -->
+
+    <div class="footCooy">
+        <div class="container">
+            <p>
+                <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20191118152436" target="_blank" title="無障礙網站(另開新視窗)">
+                    <img src="images/Accessibility.jpg" border="0" width="88" height="31" alt="通過A無障礙網頁檢測" />
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/41156C14CC997554" target="_blank" title="隱私權保護政策" style="color:white;">
+                    隱私權保護政策
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/93E745565929795D" target="_blank" title="網站安全政策" style="color:white;">
+                    網站安全政策
+                </a>│
+                <a href="https://www.epa.gov.tw/public/Data/59710575671.pdf" target="_blank" title="資訊安全規範" style="color:white;">
+                    資訊安全規範
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/A33D3A6556ABFCD2" target="_blank" title="網站資料開放宣告" style="color:white;">
+                    網站資料開放宣告
+                </a>
+                <br />
+                行政院環保署 版權所有 © 2017 All Rights Reserved
+            </p>
+        </div>
+    </div>
+
+
+</div><!--wrapper -->
+
+
+
+<a href="#" class="scrollToTop" title="回頁首">Scroll To Top</a>
+
+</form>
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/dispPageBox/route/js/jquery-ui.min.js"></script>
+<script src="/dispPageBox/route/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.min.js"></script>
+<script src="/dispPageBox/route/assets/magnific/magnificPopup.min.js"></script>
+<script src="/dispPageBox/route/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/>
+<meta name="keywords" content="垃圾車,清運路線,路線查詢,行政院環保署,環保署" />
+<meta name="description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:title" content="全國垃圾車清運路線查詢網,行政院環保署全國垃圾車清運路線查詢網" />
+<meta property="og:description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:site_name" content="全國垃圾車清運路線查詢網" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>路線資訊│全國垃圾車清運路線查詢網</title>
+<!--CSS-->
+<link rel="stylesheet" href="/dispPageBox/route/assets/fontAwesome/css/fontAwesome.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/magnific/magnificPopup.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/reset.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/style.css" />
+<link rel="shortcut icon" href="/dispPageBox/route/favicon.ico" />
+
+
+<!--[if lt ie 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<form name="mForm" method="post" action="./routeCP.aspx?ddsPageID=LINEINFO&amp;dbid=5593832776" id="mForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1E52EDA3" />
+</div>
+    <a class="skip-main" href="#anchorC" title="跳到主要內容">跳到主要內容</a>
+<div class="wrapper">
+
+    <div class="header">
+        <nav class="navbar navbar-default">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand" href="/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE&" title="全國垃圾車清運路線查詢網">全國垃圾車清運路線查詢網</h1>
+            </div>
+           
+            <div id="navbar" class="navbar-collapse collapse main-navbar">
+
+                <div class="container">
+
+                    <!-- 主導覽列 -->
+                    
+<!-- Main Nav Start -->
+
+<!-- start menu -->
+<ul class="nav nav-pills nav-justified"><!-- 若是在執行中的樣式，要在menu前方再加上 active  -->
+   
+		<li><a href='routeCP.aspx?ddsPageID=ROUTENEWS&' class='tab' title='公告訊息'><em>公告訊息</em></a></li>
+	 
+		<li><a href='routeCP.aspx?ddsPageID=ROUTELINK&' class='tab' title='相關連結'><em>相關連結</em></a></li>
+	 
+
+</ul>
+<!-- end menu -->
+
+
+
+                    <!-- <ul class="nav nav-pills nav-justified">
+                        <li><a href="path.html">清運路線查詢</a></li>
+                        <li><a href="news.html">公告訊息</a></li>
+                        <li class="active"><a href="link.html">相關連結</a></li>
+                    </ul> -->
+
+                </div><!--/.container-->
+
+            </div><!--/.nav-collapse -->
+
+        </nav>
+
+    </div><!-- header END -->
+
+    <h1 class="site-title">全國垃圾車清運路線查詢網</h1>
+
+    <div class="jumbotron">
+
+        <h2 class="main-title">路線資訊</h2>
+
+        <!-- 麵包屑 -->
+        
+
+    </div><!-- jumbotron END -->
+
+    
+    <div class="main-content">
+
+        <div class="container">
+
+            <div class="content">
+<a accesskey="C" name="C" id="anchorC" href="#C" title="快速鍵alt+C 回主要內容區" class="accesskey-link" style="top:7px; left: 0; z-index: 999;">:::</a>
+                <!-- 主內容開始 -->
+                
+<!--每頁列數，不分頁則設0-->
+
+
+<!-- /dispPageBox/trans.aspx?ddsPageID=ROUTE -->
+<a class="btn-back" href="/dispPageBox/trans.aspx?ddsPageID=ROUTE"><span class="fa fa-angle-left"></span>返回列表</a>
+<!-- <a class="btn-back" href="javascript: history.go(-1)"><span class="fa fa-angle-left"></span>返回列表</a> -->
+<!-- <h3 class="info-title">-->
+甲5 
+<!--</h3>-->
+
+<div class="row">
+
+    <div class="sidebar col-sm-3">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">甲5 資訊</h3>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt>縣市別</dt>
+                    <dd>臺中市</dd>
+                    <dt>鄉鎮市區</dt>
+                    <dd>外埔區                   </dd>
+                    <dt>清運路線序號</dt>
+                    <dd>B43820004</dd>
+                    <dt>清運路線名稱</dt>
+                    <dd>甲5</dd>
+                    <dt>清運方式</dt>
+                    <dd>沿線清運(不落地)</dd>
+                    <dt>清運車輛車號</dt>
+                    <dd>KED9070(備用車號:419VP) </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">甲5 數據</h3>
+            </div>
+            <div class="panel-body">
+                <div class="dataResult">
+                    <div class="result-item">
+                        <span class="num">46.20</span>
+                        <span class="result-title">清運路線距離(公里)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1.30</span>
+                        <span class="result-title">每日清運垃圾量(公噸/日)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1</span>
+                        <span class="result-title">清運頻率(週)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1</span>
+                        <span class="result-title">清運頻率(日)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-sm-3 END -->
+
+    <div class="resultArea col-sm-9">
+
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active">
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5593832776'><span class="fa fa-list-ul"></span>路線資訊</a>
+            </li>
+            <li>
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEPIC&dbid=5593832776'><span class="fa fa-bus"></span>路線圖</a>
+            </li>
+        </ul>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            
+                <thead>
+                    <tr>
+                        <th>清運序</th>
+                        <th>清運點名稱描述</th>
+                        <th>清運時間</th>
+                        <th>一般垃圾</th>
+                        <th>廚餘回收</th>
+                        <th>資源回收</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>1</td>
+                        <td>中山路500號</td>
+                        <td>06:40</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>2</td>
+                        <td>中山路456巷26號</td>
+                        <td>06:45</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>3</td>
+                        <td>中山路365號</td>
+                        <td>06:50</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>4</td>
+                        <td>全家便利商店
+(六分路237號)</td>
+                        <td>06:54</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>5</td>
+                        <td>六分路189號</td>
+                        <td>07:00</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>6</td>
+                        <td>六分路169-4號</td>
+                        <td>07:05</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>7</td>
+                        <td>中山路284巷7號</td>
+                        <td>07:10</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>8</td>
+                        <td>中山路277號</td>
+                        <td>07:12</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>9</td>
+                        <td>六分路280巷34號</td>
+                        <td>07:16</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>10</td>
+                        <td>六分路222巷42號</td>
+                        <td>06:40</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>11</td>
+                        <td>六分路257巷13號</td>
+                        <td>07:32</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>12</td>
+                        <td>六分路277號</td>
+                        <td>07:36</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>13</td>
+                        <td>甲后路465號</td>
+                        <td>07:41</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>14</td>
+                        <td>甲后路555號</td>
+                        <td>07:43</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>15</td>
+                        <td>后寮路43號</td>
+                        <td>07:51</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>16</td>
+                        <td>后寮路46號</td>
+                        <td>07:56</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>17</td>
+                        <td>后寮路15號</td>
+                        <td>06:40</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>18</td>
+                        <td>重光路1號</td>
+                        <td>08:15</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>19</td>
+                        <td>甲后路501號</td>
+                        <td>08:19</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>20</td>
+                        <td>重光路29巷12號</td>
+                        <td>08:23</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>21</td>
+                        <td>大同里民活動中心            (重光路54-1號)</td>
+                        <td>06:40</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>22</td>
+                        <td>中山路7號</td>
+                        <td>08:34</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>23</td>
+                        <td>興龍六巷86號</td>
+                        <td>08:40</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>24</td>
+                        <td>興龍六巷58號</td>
+                        <td>08:47</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>25</td>
+                        <td>中山路116號</td>
+                        <td>08:52</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>26</td>
+                        <td>興龍六巷24號</td>
+                        <td>08:57</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>27</td>
+                        <td>興龍六巷5號</td>
+                        <td>06:40</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>28</td>
+                        <td>甲后路394號</td>
+                        <td>09:26</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>29</td>
+                        <td>7-11便利商店
+(甲后路413號)</td>
+                        <td>09:28</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>30</td>
+                        <td>外埔郵局
+(甲后路333號)</td>
+                        <td>09:32</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>31</td>
+                        <td>甲后路245號</td>
+                        <td>09:37</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>32</td>
+                        <td>甲后路140號</td>
+                        <td>09:42</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>33</td>
+                        <td>中山路220巷6號</td>
+                        <td>09:48</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>34</td>
+                        <td>甲后路354巷21號</td>
+                        <td>09:53</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>35</td>
+                        <td>外埔區農會
+(甲后路368號)</td>
+                        <td>09:55</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>36</td>
+                        <td>中山路35巷5號</td>
+                        <td>09:58</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>37</td>
+                        <td>中山路345-10號</td>
+                        <td>10:05</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>38</td>
+                        <td>中山路408號</td>
+                        <td>10:10</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>39</td>
+                        <td>中山路486號</td>
+                        <td>10:15</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                    <tr>
+                        <td>40</td>
+                        <td>后里焚化廠</td>
+                        <td>06:40</td>
+                        <td>五</td>
+                        <td>五</td>
+                        <td>五</td>
+                    </tr>
+                
+                </tbody>
+                
+            </table>
+        </div><!-- table-responsive END -->
+
+
+        <div class="pagi text-center">
+          <ul class="pagination">
+              
+          </ul>
+        </div>
+
+
+
+
+    </div><!-- col-md-9 END -->
+
+</div><!-- row END -->
+
+
+
+
+
+
+
+            </div><!-- content END -->
+
+        </div><!-- container END -->
+    </div><!-- main-content END -->
+
+    <div class="footCooy">
+        <div class="container">
+            <p>
+                <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20191118152436" target="_blank" title="無障礙網站(另開新視窗)">
+                    <img src="images/Accessibility.jpg" border="0" width="88" height="31" alt="通過A無障礙網頁檢測" />
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/41156C14CC997554" target="_blank" title="隱私權保護政策" style="color:white;">
+                    隱私權保護政策
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/93E745565929795D" target="_blank" title="網站安全政策" style="color:white;">
+                    網站安全政策
+                </a>│
+                <a href="https://www.epa.gov.tw/public/Data/59710575671.pdf" target="_blank" title="資訊安全規範" style="color:white;">
+                    資訊安全規範
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/A33D3A6556ABFCD2" target="_blank" title="網站資料開放宣告" style="color:white;">
+                    網站資料開放宣告
+                </a>
+                <br />
+                行政院環保署 版權所有 © 2017 All Rights Reserved
+            </p>
+        </div>
+    </div>
+
+
+</div><!--wrapper -->
+
+
+
+<a href="#" class="scrollToTop" title="回頁首">Scroll To Top</a>
+
+</form>
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/dispPageBox/route/js/jquery-ui.min.js"></script>
+<script src="/dispPageBox/route/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.min.js"></script>
+<script src="/dispPageBox/route/assets/magnific/magnificPopup.min.js"></script>
+<script src="/dispPageBox/route/js/script.js"></script>
+</body>
+</html>

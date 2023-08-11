@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/>
+<meta name="keywords" content="垃圾車,清運路線,路線查詢,行政院環保署,環保署" />
+<meta name="description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:title" content="全國垃圾車清運路線查詢網,行政院環保署全國垃圾車清運路線查詢網" />
+<meta property="og:description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:site_name" content="全國垃圾車清運路線查詢網" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>路線資訊│全國垃圾車清運路線查詢網</title>
+<!--CSS-->
+<link rel="stylesheet" href="/dispPageBox/route/assets/fontAwesome/css/fontAwesome.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/magnific/magnificPopup.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/reset.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/style.css" />
+<link rel="shortcut icon" href="/dispPageBox/route/favicon.ico" />
+
+
+<!--[if lt ie 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<form name="mForm" method="post" action="./routeCP.aspx?ddsPageID=LINEINFO&amp;dbid=5739834057" id="mForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1E52EDA3" />
+</div>
+    <a class="skip-main" href="#anchorC" title="跳到主要內容">跳到主要內容</a>
+<div class="wrapper">
+
+    <div class="header">
+        <nav class="navbar navbar-default">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand" href="/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE&" title="全國垃圾車清運路線查詢網">全國垃圾車清運路線查詢網</h1>
+            </div>
+           
+            <div id="navbar" class="navbar-collapse collapse main-navbar">
+
+                <div class="container">
+
+                    <!-- 主導覽列 -->
+                    
+<!-- Main Nav Start -->
+
+<!-- start menu -->
+<ul class="nav nav-pills nav-justified"><!-- 若是在執行中的樣式，要在menu前方再加上 active  -->
+   
+		<li><a href='routeCP.aspx?ddsPageID=ROUTENEWS&' class='tab' title='公告訊息'><em>公告訊息</em></a></li>
+	 
+		<li><a href='routeCP.aspx?ddsPageID=ROUTELINK&' class='tab' title='相關連結'><em>相關連結</em></a></li>
+	 
+
+</ul>
+<!-- end menu -->
+
+
+
+                    <!-- <ul class="nav nav-pills nav-justified">
+                        <li><a href="path.html">清運路線查詢</a></li>
+                        <li><a href="news.html">公告訊息</a></li>
+                        <li class="active"><a href="link.html">相關連結</a></li>
+                    </ul> -->
+
+                </div><!--/.container-->
+
+            </div><!--/.nav-collapse -->
+
+        </nav>
+
+    </div><!-- header END -->
+
+    <h1 class="site-title">全國垃圾車清運路線查詢網</h1>
+
+    <div class="jumbotron">
+
+        <h2 class="main-title">路線資訊</h2>
+
+        <!-- 麵包屑 -->
+        
+
+    </div><!-- jumbotron END -->
+
+    
+    <div class="main-content">
+
+        <div class="container">
+
+            <div class="content">
+<a accesskey="C" name="C" id="anchorC" href="#C" title="快速鍵alt+C 回主要內容區" class="accesskey-link" style="top:7px; left: 0; z-index: 999;">:::</a>
+                <!-- 主內容開始 -->
+                
+<!--每頁列數，不分頁則設0-->
+
+
+<!-- /dispPageBox/trans.aspx?ddsPageID=ROUTE -->
+<a class="btn-back" href="/dispPageBox/trans.aspx?ddsPageID=ROUTE"><span class="fa fa-angle-left"></span>返回列表</a>
+<!-- <a class="btn-back" href="javascript: history.go(-1)"><span class="fa fa-angle-left"></span>返回列表</a> -->
+<!-- <h3 class="info-title">-->
+13 號週一、三、五路線 
+<!--</h3>-->
+
+<div class="row">
+
+    <div class="sidebar col-sm-3">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">13 號週一、三、五路線 資訊</h3>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt>縣市別</dt>
+                    <dd>彰化縣</dd>
+                    <dt>鄉鎮市區</dt>
+                    <dd>和美鎮                   </dd>
+                    <dt>清運路線序號</dt>
+                    <dd>N50820037</dd>
+                    <dt>清運路線名稱</dt>
+                    <dd>13 號週一、三、五路線</dd>
+                    <dt>清運方式</dt>
+                    <dd>沿線清運(不落地)</dd>
+                    <dt>清運車輛車號</dt>
+                    <dd>441VQ(備用車號:641VQ) </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">13 號週一、三、五路線 數據</h3>
+            </div>
+            <div class="panel-body">
+                <div class="dataResult">
+                    <div class="result-item">
+                        <span class="num">30.00</span>
+                        <span class="result-title">清運路線距離(公里)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">4.33</span>
+                        <span class="result-title">每日清運垃圾量(公噸/日)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">3</span>
+                        <span class="result-title">清運頻率(週)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1</span>
+                        <span class="result-title">清運頻率(日)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-sm-3 END -->
+
+    <div class="resultArea col-sm-9">
+
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active">
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5739834057'><span class="fa fa-list-ul"></span>路線資訊</a>
+            </li>
+            <li>
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEPIC&dbid=5739834057'><span class="fa fa-bus"></span>路線圖</a>
+            </li>
+        </ul>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            
+                <thead>
+                    <tr>
+                        <th>清運序</th>
+                        <th>清運點名稱描述</th>
+                        <th>清運時間</th>
+                        <th>一般垃圾</th>
+                        <th>廚餘回收</th>
+                        <th>資源回收</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>1</td>
+                        <td>忠恕路10巷1號</td>
+                        <td>16:35</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>2</td>
+                        <td>孝義路185巷1號</td>
+                        <td>16:38</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>3</td>
+                        <td>孝義路139巷1號</td>
+                        <td>16:44</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>4</td>
+                        <td>孝行路45巷4號</td>
+                        <td>16:46</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>5</td>
+                        <td>忠清路17號</td>
+                        <td>16:51</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>6</td>
+                        <td>信安路1號</td>
+                        <td>16:57</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>7</td>
+                        <td>義安路209巷2號</td>
+                        <td>17:02</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>8</td>
+                        <td>義安路158巷1號</td>
+                        <td>17:07</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>9</td>
+                        <td>和潭路1號</td>
+                        <td>17:11</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>10</td>
+                        <td>義美路99號</td>
+                        <td>17:14</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>11</td>
+                        <td>信陵路1號</td>
+                        <td>17:17</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>12</td>
+                        <td>信義路220巷3號</td>
+                        <td>17:19</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>13</td>
+                        <td>德美路615巷1號</td>
+                        <td>17:21</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>14</td>
+                        <td>義利路3號</td>
+                        <td>17:24</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>15</td>
+                        <td>彰美路4段240巷1號</td>
+                        <td>17:25</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>16</td>
+                        <td>信義路69巷1號</td>
+                        <td>17:26</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>17</td>
+                        <td>彰美路4段224巷1號</td>
+                        <td>17:28</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>18</td>
+                        <td>信義路101巷1號</td>
+                        <td>17:30</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>19</td>
+                        <td>義和街2號</td>
+                        <td>17:32</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>20</td>
+                        <td>彰美路6段225巷1號</td>
+                        <td>17:37</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>21</td>
+                        <td>彰化縣和美鎮道周路780巷1號</td>
+                        <td>17:42</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>22</td>
+                        <td>彰化縣和美鎮和線路101巷1號</td>
+                        <td>17:45</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>23</td>
+                        <td>彰化縣和美鎮平等路35巷1號</td>
+                        <td>17:47</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>24</td>
+                        <td>彰化縣和美鎮和線路15巷1號</td>
+                        <td>17:50</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>25</td>
+                        <td>彰化縣和美鎮西園路72巷1號</td>
+                        <td>17:51</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>26</td>
+                        <td>彰化縣和美鎮和卿路188號</td>
+                        <td>17:53</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>27</td>
+                        <td>彰化縣和美鎮愛聞路98巷2號</td>
+                        <td>18:53</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>28</td>
+                        <td>彰化縣和美鎮愛新路1號</td>
+                        <td>19:00</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>29</td>
+                        <td>彰化縣和美鎮金山宮</td>
+                        <td>19:03</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>30</td>
+                        <td>彰化縣和美鎮仁親路1號</td>
+                        <td>19:06</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>31</td>
+                        <td>彰化縣和美鎮七寮路51巷1號</td>
+                        <td>19:10</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>32</td>
+                        <td>彰化縣和美鎮大佃路919號</td>
+                        <td>19:15</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>33</td>
+                        <td>彰化縣和美鎮望族社區-道周路23巷27弄</td>
+                        <td>19:20</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>34</td>
+                        <td>彰化縣和美鎮柑竹路12巷1號</td>
+                        <td>19:33</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>35</td>
+                        <td>彰化縣和美鎮柑竹路21巷1號</td>
+                        <td>19:35</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>36</td>
+                        <td>彰化縣和美鎮柑竹路39巷1號</td>
+                        <td>19:38</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>37</td>
+                        <td>彰化縣和美鎮柑竹路46巷1號</td>
+                        <td>19:43</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>38</td>
+                        <td>彰化縣和美鎮柑竹路66巷1號</td>
+                        <td>19:46</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>39</td>
+                        <td>彰化縣和美鎮柑竹路130巷1號</td>
+                        <td>19:49</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>40</td>
+                        <td>彰化縣和美鎮東明路5號</td>
+                        <td>19:53</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>41</td>
+                        <td>彰化縣和美鎮東光路13號</td>
+                        <td>19:58</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>42</td>
+                        <td>彰化縣和美鎮柑竹路331巷2號</td>
+                        <td>20:03</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                    <tr>
+                        <td>43</td>
+                        <td>彰化縣和美鎮柑竹路391巷2號</td>
+                        <td>20:08</td>
+                        <td>一</td>
+                        <td>一</td>
+                        <td>一</td>
+                    </tr>
+                
+                </tbody>
+                
+            </table>
+        </div><!-- table-responsive END -->
+
+
+        <div class="pagi text-center">
+          <ul class="pagination">
+              
+          </ul>
+        </div>
+
+
+
+
+    </div><!-- col-md-9 END -->
+
+</div><!-- row END -->
+
+
+
+
+
+
+
+            </div><!-- content END -->
+
+        </div><!-- container END -->
+    </div><!-- main-content END -->
+
+    <div class="footCooy">
+        <div class="container">
+            <p>
+                <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20191118152436" target="_blank" title="無障礙網站(另開新視窗)">
+                    <img src="images/Accessibility.jpg" border="0" width="88" height="31" alt="通過A無障礙網頁檢測" />
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/41156C14CC997554" target="_blank" title="隱私權保護政策" style="color:white;">
+                    隱私權保護政策
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/93E745565929795D" target="_blank" title="網站安全政策" style="color:white;">
+                    網站安全政策
+                </a>│
+                <a href="https://www.epa.gov.tw/public/Data/59710575671.pdf" target="_blank" title="資訊安全規範" style="color:white;">
+                    資訊安全規範
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/A33D3A6556ABFCD2" target="_blank" title="網站資料開放宣告" style="color:white;">
+                    網站資料開放宣告
+                </a>
+                <br />
+                行政院環保署 版權所有 © 2017 All Rights Reserved
+            </p>
+        </div>
+    </div>
+
+
+</div><!--wrapper -->
+
+
+
+<a href="#" class="scrollToTop" title="回頁首">Scroll To Top</a>
+
+</form>
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/dispPageBox/route/js/jquery-ui.min.js"></script>
+<script src="/dispPageBox/route/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.min.js"></script>
+<script src="/dispPageBox/route/assets/magnific/magnificPopup.min.js"></script>
+<script src="/dispPageBox/route/js/script.js"></script>
+</body>
+</html>

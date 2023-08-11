@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/>
+<meta name="keywords" content="垃圾車,清運路線,路線查詢,行政院環保署,環保署" />
+<meta name="description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:title" content="全國垃圾車清運路線查詢網,行政院環保署全國垃圾車清運路線查詢網" />
+<meta property="og:description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:site_name" content="全國垃圾車清運路線查詢網" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>路線資訊│全國垃圾車清運路線查詢網</title>
+<!--CSS-->
+<link rel="stylesheet" href="/dispPageBox/route/assets/fontAwesome/css/fontAwesome.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/magnific/magnificPopup.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/reset.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/style.css" />
+<link rel="shortcut icon" href="/dispPageBox/route/favicon.ico" />
+
+
+<!--[if lt ie 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<form name="mForm" method="post" action="./routeCP.aspx?ddsPageID=LINEINFO&amp;dbid=5111815615" id="mForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1E52EDA3" />
+</div>
+    <a class="skip-main" href="#anchorC" title="跳到主要內容">跳到主要內容</a>
+<div class="wrapper">
+
+    <div class="header">
+        <nav class="navbar navbar-default">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand" href="/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE&" title="全國垃圾車清運路線查詢網">全國垃圾車清運路線查詢網</h1>
+            </div>
+           
+            <div id="navbar" class="navbar-collapse collapse main-navbar">
+
+                <div class="container">
+
+                    <!-- 主導覽列 -->
+                    
+<!-- Main Nav Start -->
+
+<!-- start menu -->
+<ul class="nav nav-pills nav-justified"><!-- 若是在執行中的樣式，要在menu前方再加上 active  -->
+   
+		<li><a href='routeCP.aspx?ddsPageID=ROUTENEWS&' class='tab' title='公告訊息'><em>公告訊息</em></a></li>
+	 
+		<li><a href='routeCP.aspx?ddsPageID=ROUTELINK&' class='tab' title='相關連結'><em>相關連結</em></a></li>
+	 
+
+</ul>
+<!-- end menu -->
+
+
+
+                    <!-- <ul class="nav nav-pills nav-justified">
+                        <li><a href="path.html">清運路線查詢</a></li>
+                        <li><a href="news.html">公告訊息</a></li>
+                        <li class="active"><a href="link.html">相關連結</a></li>
+                    </ul> -->
+
+                </div><!--/.container-->
+
+            </div><!--/.nav-collapse -->
+
+        </nav>
+
+    </div><!-- header END -->
+
+    <h1 class="site-title">全國垃圾車清運路線查詢網</h1>
+
+    <div class="jumbotron">
+
+        <h2 class="main-title">路線資訊</h2>
+
+        <!-- 麵包屑 -->
+        
+
+    </div><!-- jumbotron END -->
+
+    
+    <div class="main-content">
+
+        <div class="container">
+
+            <div class="content">
+<a accesskey="C" name="C" id="anchorC" href="#C" title="快速鍵alt+C 回主要內容區" class="accesskey-link" style="top:7px; left: 0; z-index: 999;">:::</a>
+                <!-- 主內容開始 -->
+                
+<!--每頁列數，不分頁則設0-->
+
+
+<!-- /dispPageBox/trans.aspx?ddsPageID=ROUTE -->
+<a class="btn-back" href="/dispPageBox/trans.aspx?ddsPageID=ROUTE"><span class="fa fa-angle-left"></span>返回列表</a>
+<!-- <a class="btn-back" href="javascript: history.go(-1)"><span class="fa fa-angle-left"></span>返回列表</a> -->
+<!-- <h3 class="info-title">-->
+景美分隊垃圾清運路線KEA1685(局編108-G10) 
+<!--</h3>-->
+
+<div class="row">
+
+    <div class="sidebar col-sm-3">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">景美分隊垃圾清運路線KEA1685(局編108-G10) 資訊</h3>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt>縣市別</dt>
+                    <dd>臺北市</dd>
+                    <dt>鄉鎮市區</dt>
+                    <dd>文山區                   </dd>
+                    <dt>清運路線序號</dt>
+                    <dd>A11620008</dd>
+                    <dt>清運路線名稱</dt>
+                    <dd>景美分隊垃圾清運路線KEA1685(局編108-G10)</dd>
+                    <dt>清運方式</dt>
+                    <dd>沿線清運(不落地)</dd>
+                    <dt>清運車輛車號</dt>
+                    <dd>KEA1685(備用車號:) </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">景美分隊垃圾清運路線KEA1685(局編108-G10) 數據</h3>
+            </div>
+            <div class="panel-body">
+                <div class="dataResult">
+                    <div class="result-item">
+                        <span class="num">40.00</span>
+                        <span class="result-title">清運路線距離(公里)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">4.50</span>
+                        <span class="result-title">每日清運垃圾量(公噸/日)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">5</span>
+                        <span class="result-title">清運頻率(週)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">2</span>
+                        <span class="result-title">清運頻率(日)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-sm-3 END -->
+
+    <div class="resultArea col-sm-9">
+
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active">
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5111815615'><span class="fa fa-list-ul"></span>路線資訊</a>
+            </li>
+            <li>
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEPIC&dbid=5111815615'><span class="fa fa-bus"></span>路線圖</a>
+            </li>
+        </ul>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            
+                <thead>
+                    <tr>
+                        <th>清運序</th>
+                        <th>清運點名稱描述</th>
+                        <th>清運時間</th>
+                        <th>一般垃圾</th>
+                        <th>廚餘回收</th>
+                        <th>資源回收</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>1</td>
+                        <td>臺北市文山區景後街145號前</td>
+                        <td>17:10</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>2</td>
+                        <td>臺北市文山區景後街103號前</td>
+                        <td>17:16</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>3</td>
+                        <td>臺北市文山區景興路206號前</td>
+                        <td>17:23</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>4</td>
+                        <td>臺北市文山區景興路290號旁</td>
+                        <td>17:31</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>5</td>
+                        <td>臺北市文山區景美街148號旁</td>
+                        <td>17:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>6</td>
+                        <td>臺北市文山區景文街165號前</td>
+                        <td>17:47</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>7</td>
+                        <td>臺北市文山區景文街123號前</td>
+                        <td>17:53</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>8</td>
+                        <td>臺北市文山區景文街75號前</td>
+                        <td>17:59</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>9</td>
+                        <td>臺北市文山區景文街41號前</td>
+                        <td>18:06</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>10</td>
+                        <td>臺北市文山區羅斯福路六段299號前</td>
+                        <td>18:10</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>11</td>
+                        <td>臺北市文山區羅斯福路六段242號前</td>
+                        <td>18:15</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>12</td>
+                        <td>臺北市文山區羅斯福路六段308號前</td>
+                        <td>18:24</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>13</td>
+                        <td>臺北市文山區萬慶街37巷9號旁</td>
+                        <td>18:41</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>14</td>
+                        <td>臺北市文山區育英街45巷4號旁</td>
+                        <td>18:51</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>15</td>
+                        <td>臺北市文山區育英街31巷36弄2號旁</td>
+                        <td>19:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>16</td>
+                        <td>臺北市文山區景中街27號旁</td>
+                        <td>20:46</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>17</td>
+                        <td>臺北市文山區羅斯福路六段242號前</td>
+                        <td>20:52</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>18</td>
+                        <td>臺北市文山區羅斯福路六段308號前</td>
+                        <td>20:58</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>19</td>
+                        <td>臺北市文山區景福街283號前</td>
+                        <td>21:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>20</td>
+                        <td>臺北市文山區景福街251巷2號旁</td>
+                        <td>21:09</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>21</td>
+                        <td>臺北市文山區景福街221號旁</td>
+                        <td>21:16</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>22</td>
+                        <td>臺北市文山區景福街177號旁</td>
+                        <td>21:22</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>23</td>
+                        <td>臺北市文山區景福街133巷2號旁</td>
+                        <td>21:30</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>24</td>
+                        <td>臺北市文山區溪口街127號旁</td>
+                        <td>21:35</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>25</td>
+                        <td>臺北市文山區溪口街101號前</td>
+                        <td>21:41</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>26</td>
+                        <td>臺北市文山區溪口街93號旁</td>
+                        <td>21:47</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>27</td>
+                        <td>臺北市文山區溪口街75號前</td>
+                        <td>21:53</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>28</td>
+                        <td>臺北市文山區溪口街53號前</td>
+                        <td>21:59</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>29</td>
+                        <td>臺北市文山區景興路206號旁</td>
+                        <td>22:12</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>30</td>
+                        <td>臺北市文山區景興路276號旁</td>
+                        <td>22:18</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>31</td>
+                        <td>臺北市文山區景美街148號旁</td>
+                        <td>22:22</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>32</td>
+                        <td>臺北市文山區景文街165號前</td>
+                        <td>22:27</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>33</td>
+                        <td>臺北市文山區景文街123號前</td>
+                        <td>22:32</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>34</td>
+                        <td>臺北市文山區景文街75號前</td>
+                        <td>22:36</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>35</td>
+                        <td>臺北市文山區景文街41號前</td>
+                        <td>22:41</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                </tbody>
+                
+            </table>
+        </div><!-- table-responsive END -->
+
+
+        <div class="pagi text-center">
+          <ul class="pagination">
+              
+          </ul>
+        </div>
+
+
+
+
+    </div><!-- col-md-9 END -->
+
+</div><!-- row END -->
+
+
+
+
+
+
+
+            </div><!-- content END -->
+
+        </div><!-- container END -->
+    </div><!-- main-content END -->
+
+    <div class="footCooy">
+        <div class="container">
+            <p>
+                <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20191118152436" target="_blank" title="無障礙網站(另開新視窗)">
+                    <img src="images/Accessibility.jpg" border="0" width="88" height="31" alt="通過A無障礙網頁檢測" />
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/41156C14CC997554" target="_blank" title="隱私權保護政策" style="color:white;">
+                    隱私權保護政策
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/93E745565929795D" target="_blank" title="網站安全政策" style="color:white;">
+                    網站安全政策
+                </a>│
+                <a href="https://www.epa.gov.tw/public/Data/59710575671.pdf" target="_blank" title="資訊安全規範" style="color:white;">
+                    資訊安全規範
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/A33D3A6556ABFCD2" target="_blank" title="網站資料開放宣告" style="color:white;">
+                    網站資料開放宣告
+                </a>
+                <br />
+                行政院環保署 版權所有 © 2017 All Rights Reserved
+            </p>
+        </div>
+    </div>
+
+
+</div><!--wrapper -->
+
+
+
+<a href="#" class="scrollToTop" title="回頁首">Scroll To Top</a>
+
+</form>
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/dispPageBox/route/js/jquery-ui.min.js"></script>
+<script src="/dispPageBox/route/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.min.js"></script>
+<script src="/dispPageBox/route/assets/magnific/magnificPopup.min.js"></script>
+<script src="/dispPageBox/route/js/script.js"></script>
+</body>
+</html>
