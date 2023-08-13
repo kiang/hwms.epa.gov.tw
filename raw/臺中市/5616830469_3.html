@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="author" content="UTRUST 信諾科技"/>
+<meta name="keywords" content="垃圾車,清運路線,路線查詢,行政院環保署,環保署" />
+<meta name="description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:title" content="全國垃圾車清運路線查詢網,行政院環保署全國垃圾車清運路線查詢網" />
+<meta property="og:description" content="全國垃圾車清運路線查詢網" />
+<meta property="og:site_name" content="全國垃圾車清運路線查詢網" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE" />
+<meta property="og:image" content="" />
+<meta property="fb:admins" content="" />
+<title>路線資訊│全國垃圾車清運路線查詢網</title>
+<!--CSS-->
+<link rel="stylesheet" href="/dispPageBox/route/assets/fontAwesome/css/fontAwesome.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.css" />
+<link rel="stylesheet" href="/dispPageBox/route/assets/magnific/magnificPopup.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/reset.css" />
+<link rel="stylesheet" href="/dispPageBox/route/css/style.css" />
+<link rel="shortcut icon" href="/dispPageBox/route/favicon.ico" />
+
+
+<!--[if lt ie 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<form name="mForm" method="post" action="./routeCP.aspx?ddsPageID=LINEINFO&amp;dbid=5616830469&amp;p=3" id="mForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1E52EDA3" />
+</div>
+    <a class="skip-main" href="#anchorC" title="跳到主要內容">跳到主要內容</a>
+<div class="wrapper">
+
+    <div class="header">
+        <nav class="navbar navbar-default">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand" href="/dispPageBox/route/routeCP.aspx?ddsPageID=ROUTE&" title="全國垃圾車清運路線查詢網">全國垃圾車清運路線查詢網</h1>
+            </div>
+           
+            <div id="navbar" class="navbar-collapse collapse main-navbar">
+
+                <div class="container">
+
+                    <!-- 主導覽列 -->
+                    
+<!-- Main Nav Start -->
+
+<!-- start menu -->
+<ul class="nav nav-pills nav-justified"><!-- 若是在執行中的樣式，要在menu前方再加上 active  -->
+   
+		<li><a href='routeCP.aspx?ddsPageID=ROUTENEWS&' class='tab' title='公告訊息'><em>公告訊息</em></a></li>
+	 
+		<li><a href='routeCP.aspx?ddsPageID=ROUTELINK&' class='tab' title='相關連結'><em>相關連結</em></a></li>
+	 
+
+</ul>
+<!-- end menu -->
+
+
+
+                    <!-- <ul class="nav nav-pills nav-justified">
+                        <li><a href="path.html">清運路線查詢</a></li>
+                        <li><a href="news.html">公告訊息</a></li>
+                        <li class="active"><a href="link.html">相關連結</a></li>
+                    </ul> -->
+
+                </div><!--/.container-->
+
+            </div><!--/.nav-collapse -->
+
+        </nav>
+
+    </div><!-- header END -->
+
+    <h1 class="site-title">全國垃圾車清運路線查詢網</h1>
+
+    <div class="jumbotron">
+
+        <h2 class="main-title">路線資訊</h2>
+
+        <!-- 麵包屑 -->
+        
+
+    </div><!-- jumbotron END -->
+
+    
+    <div class="main-content">
+
+        <div class="container">
+
+            <div class="content">
+<a accesskey="C" name="C" id="anchorC" href="#C" title="快速鍵alt+C 回主要內容區" class="accesskey-link" style="top:7px; left: 0; z-index: 999;">:::</a>
+                <!-- 主內容開始 -->
+                
+<!--每頁列數，不分頁則設0-->
+
+
+<!-- /dispPageBox/trans.aspx?ddsPageID=ROUTE -->
+<a class="btn-back" href="/dispPageBox/trans.aspx?ddsPageID=ROUTE"><span class="fa fa-angle-left"></span>返回列表</a>
+<!-- <a class="btn-back" href="javascript: history.go(-1)"><span class="fa fa-angle-left"></span>返回列表</a> -->
+<!-- <h3 class="info-title">-->
+873-VC 
+<!--</h3>-->
+
+<div class="row">
+
+    <div class="sidebar col-sm-3">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">873-VC 資訊</h3>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt>縣市別</dt>
+                    <dd>臺中市</dd>
+                    <dt>鄉鎮市區</dt>
+                    <dd>大里區                   </dd>
+                    <dt>清運路線序號</dt>
+                    <dd>B41210023</dd>
+                    <dt>清運路線名稱</dt>
+                    <dd>873-VC</dd>
+                    <dt>清運方式</dt>
+                    <dd>沿線清運(不落地)</dd>
+                    <dt>清運車輛車號</dt>
+                    <dd>873VC(備用車號:317UR) </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">873-VC 數據</h3>
+            </div>
+            <div class="panel-body">
+                <div class="dataResult">
+                    <div class="result-item">
+                        <span class="num">50.00</span>
+                        <span class="result-title">清運路線距離(公里)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">4.71</span>
+                        <span class="result-title">每日清運垃圾量(公噸/日)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">5</span>
+                        <span class="result-title">清運頻率(週)</span>
+                    </div>
+
+                    <div class="result-item">
+                        <span class="num">1</span>
+                        <span class="result-title">清運頻率(日)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- col-sm-3 END -->
+
+    <div class="resultArea col-sm-9">
+
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active">
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5616830469'><span class="fa fa-list-ul"></span>路線資訊</a>
+            </li>
+            <li>
+                <a href='https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEPIC&dbid=5616830469'><span class="fa fa-bus"></span>路線圖</a>
+            </li>
+        </ul>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+            
+                <thead>
+                    <tr>
+                        <th>清運序</th>
+                        <th>清運點名稱描述</th>
+                        <th>清運時間</th>
+                        <th>一般垃圾</th>
+                        <th>廚餘回收</th>
+                        <th>資源回收</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                        <td>101</td>
+                        <td>臺中市大里區德芳路一段88巷69號</td>
+                        <td>17:35</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>102</td>
+                        <td>臺中市大里區德芳路一段88巷83號</td>
+                        <td>17:35</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>103</td>
+                        <td>臺中市大里區西榮路195巷11號</td>
+                        <td>17:35</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>104</td>
+                        <td>臺中市大里區新南路163巷23號</td>
+                        <td>17:35</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>105</td>
+                        <td>臺中市大里區德芳路一段301巷6號</td>
+                        <td>17:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>106</td>
+                        <td>臺中市大里區益民路二段181巷1號</td>
+                        <td>17:45</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>107</td>
+                        <td>臺中市大里區益民路二段181巷21號</td>
+                        <td>17:45</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>108</td>
+                        <td>臺中市大里區文隆街47號</td>
+                        <td>17:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>109</td>
+                        <td>臺中市大里區文隆街35號</td>
+                        <td>17:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>110</td>
+                        <td>臺中市大里區文隆街7號</td>
+                        <td>17:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>111</td>
+                        <td>臺中市大里區文芳街37號</td>
+                        <td>17:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>112</td>
+                        <td>臺中市大里區文芳街13號</td>
+                        <td>17:50</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>113</td>
+                        <td>臺中市大里區和平街85號</td>
+                        <td>17:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>114</td>
+                        <td>臺中市大里區和平街69號</td>
+                        <td>17:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>115</td>
+                        <td>臺中市大里區和平街31號</td>
+                        <td>17:55</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>116</td>
+                        <td>臺中市大里區益民路二段81巷24號</td>
+                        <td>18:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>117</td>
+                        <td>臺中市大里區益民路二段89巷37弄18號</td>
+                        <td>18:00</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>118</td>
+                        <td>臺中市大里區益民路二段57巷59號</td>
+                        <td>18:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>119</td>
+                        <td>臺中市大里區益民路二段57巷23號</td>
+                        <td>18:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>120</td>
+                        <td>臺中市大里區益民路二段57巷9號</td>
+                        <td>18:05</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>121</td>
+                        <td>臺中市大里區大里路132之2號</td>
+                        <td>18:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>122</td>
+                        <td>臺中市大里區大里路138之2號</td>
+                        <td>18:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>123</td>
+                        <td>臺中市大里區大里路156號</td>
+                        <td>18:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>124</td>
+                        <td>臺中市大里區大里路176號</td>
+                        <td>18:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>125</td>
+                        <td>臺中市大里區大里路188號</td>
+                        <td>18:20</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>126</td>
+                        <td>臺中市大里區大里一街118巷6號</td>
+                        <td>18:25</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>127</td>
+                        <td>臺中市大里區大里一街102號</td>
+                        <td>18:25</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>128</td>
+                        <td>臺中市大里區大里一街90號</td>
+                        <td>18:25</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>129</td>
+                        <td>臺中市大里區大里一街60號</td>
+                        <td>18:25</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>130</td>
+                        <td>臺中市大里區大里一街38號</td>
+                        <td>18:25</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>131</td>
+                        <td>臺中市大里區德芳南一街32號</td>
+                        <td>18:30</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>132</td>
+                        <td>臺中市大里區德芳南一街8號</td>
+                        <td>18:30</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>133</td>
+                        <td>臺中市大里區大里二街40號</td>
+                        <td>18:30</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>134</td>
+                        <td>臺中市大里區大里二街50號</td>
+                        <td>18:35</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>135</td>
+                        <td>臺中市大里區大里二街86號</td>
+                        <td>18:35</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>136</td>
+                        <td>臺中市大里區大里二街112號</td>
+                        <td>18:35</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>137</td>
+                        <td>臺中市大里區德芳南路381號</td>
+                        <td>18:35</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>138</td>
+                        <td>臺中市大里區德芳南路365號</td>
+                        <td>18:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>139</td>
+                        <td>臺中市大里區德芳南路341號</td>
+                        <td>18:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>140</td>
+                        <td>臺中市大里區德芳南路281號</td>
+                        <td>18:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>141</td>
+                        <td>臺中市大里區德芳南路269號</td>
+                        <td>18:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>142</td>
+                        <td>臺中市大里區德芳南路224號</td>
+                        <td>18:40</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                    <tr>
+                        <td>143</td>
+                        <td>臺中市大里區新光路96號(對面)</td>
+                        <td>20:30</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                        <td>一、二、四、五、六</td>
+                    </tr>
+                
+                </tbody>
+                
+            </table>
+        </div><!-- table-responsive END -->
+
+
+        <div class="pagi text-center">
+          <ul class="pagination">
+              <li class=""><a href="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5616830469&p=2" class="" data-index=""><i class="fa fa-chevron-left"></i> < </a></li><li class=""><a href="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5616830469&p=1" class="" data-min="-50" data-max="-1" data-page="1">1</a></li><li class=""><a href="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5616830469&p=2" class="" data-min="0" data-max="49" data-page="2">2</a></li><li class="active"><a href="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5616830469&p=3" class="" data-min="50" data-max="99" data-page="3">3</a></li><li class="disabled"><a href="https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid=5616830469&p=3" class="" data-index=""> > <i class="fa fa-chevron-right"></i></a></li>
+          </ul>
+        </div>
+
+
+
+
+    </div><!-- col-md-9 END -->
+
+</div><!-- row END -->
+
+
+
+
+
+
+
+            </div><!-- content END -->
+
+        </div><!-- container END -->
+    </div><!-- main-content END -->
+
+    <div class="footCooy">
+        <div class="container">
+            <p>
+                <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20191118152436" target="_blank" title="無障礙網站(另開新視窗)">
+                    <img src="images/Accessibility.jpg" border="0" width="88" height="31" alt="通過A無障礙網頁檢測" />
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/41156C14CC997554" target="_blank" title="隱私權保護政策" style="color:white;">
+                    隱私權保護政策
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/93E745565929795D" target="_blank" title="網站安全政策" style="color:white;">
+                    網站安全政策
+                </a>│
+                <a href="https://www.epa.gov.tw/public/Data/59710575671.pdf" target="_blank" title="資訊安全規範" style="color:white;">
+                    資訊安全規範
+                </a>│
+                <a href="https://www.epa.gov.tw/Page/A33D3A6556ABFCD2" target="_blank" title="網站資料開放宣告" style="color:white;">
+                    網站資料開放宣告
+                </a>
+                <br />
+                行政院環保署 版權所有 © 2017 All Rights Reserved
+            </p>
+        </div>
+    </div>
+
+
+</div><!--wrapper -->
+
+
+
+<a href="#" class="scrollToTop" title="回頁首">Scroll To Top</a>
+
+</form>
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/dispPageBox/route/js/jquery-ui.min.js"></script>
+<script src="/dispPageBox/route/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/dispPageBox/route/assets/selectBoxIt/selectBoxIt.min.js"></script>
+<script src="/dispPageBox/route/assets/magnific/magnificPopup.min.js"></script>
+<script src="/dispPageBox/route/js/script.js"></script>
+</body>
+</html>

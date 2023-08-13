@@ -16,8 +16,28 @@ while ($line = fgetcsv($listFh, 2048)) {
         mkdir($rawPath, 0777, true);
     }
     $rawHtml = $rawPath . '/' . $line[5] . '.html';
-    $url = "https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid={$line[5]}";
-    $client->request('GET', $url);
-    file_put_contents($rawHtml, $client->getResponse()->getContent());
-    echo "done {$line[5]}\n";
+    // $url = "https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid={$line[5]}";
+    // $client->request('GET', $url);
+    // file_put_contents($rawHtml, $client->getResponse()->getContent());
+    $html = file_get_contents($rawHtml);
+    $pagePos = strpos($html, '<ul class="pagination">');
+    $pagePosEnd = strpos($html, '</ul>', $pagePos);
+    $pageParts = explode("dbid={$line[5]}&p=", substr($html, $pagePos, $pagePosEnd - $pagePos));
+    $pageDone = [
+        1 => true,
+    ];
+    foreach ($pageParts as $k => $v) {
+        $targetPage = intval($v);
+        if ($targetPage > 1 && !isset($pageDone[$targetPage])) {
+            $pageDone[$targetPage] = true;
+            $rawHtml = $rawPath . '/' . $line[5] . '_' . $targetPage . '.html';
+            if (!file_exists($rawHtml)) {
+                $url = "https://hwms.epa.gov.tw/dispPageBox/route/routeCP.aspx?ddsPageID=LINEINFO&dbid={$line[5]}&p={$targetPage}";
+                $client->request('GET', $url);
+                file_put_contents($rawHtml, $client->getResponse()->getContent());
+                echo "{$rawHtml}\n";
+            }
+
+        }
+    }
 }
