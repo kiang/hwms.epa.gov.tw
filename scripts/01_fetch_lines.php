@@ -7,11 +7,11 @@ use Goutte\Client;
 $client = new Client();
 $client->setServerParameter('HTTP_USER_AGENT', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0');
 
-$csvPath = $baseDir . '/docs/data/csv';
+$csvPath = $baseDir . '/docs/data/csv/orig';
 $listFh = fopen($csvPath . '/list.csv', 'r');
 fgetcsv($listFh, 2048);
 while ($line = fgetcsv($listFh, 2048)) {
-    $jsonPath = $baseDir . '/docs/data/json/' . $line[0];
+    $jsonPath = $baseDir . '/docs/data/json/orig/' . $line[0];
     if (!file_exists($jsonPath)) {
         mkdir($jsonPath, 0777, true);
     }

@@ -8,7 +8,7 @@ $client = new Client();
 $client->setServerParameter('HTTP_USER_AGENT', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0');
 
 $lastPage = 1;
-$csvPath = $baseDir . '/docs/data/csv';
+$csvPath = $baseDir . '/docs/data/csv/orig';
 if (!file_exists($csvPath)) {
     mkdir($csvPath, 0777, true);
 }
